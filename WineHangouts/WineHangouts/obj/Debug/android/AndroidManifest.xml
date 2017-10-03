@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.savvyitsol.wineoulet" android:versionName="1" android:installLocation="internalOnly" android:versionCode="13">
+  <!--suppress UsesMinSdkAttributes-->
+  <uses-sdk android:minSdkVersion="16" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <permission android:name="com.savvyitsol.wineoulet.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+  <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.FLASHLIGHT" />
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  <uses-permission android:name="com.savvyitsol.winehangoutz.permission.C2D_MESSAGE" />
+  <!--<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />-->
+  <application android:label="@string/ApplicationName" android:theme="@style/CustomActionBarTheme" android:icon="@drawable/icon" android:largeHeap="true" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
+    <receiver android:name="com.google.android.gms.gcm.GcmReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND">
+      <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+        <category android:name="com.savvyitsol.wineoulet" />
+      </intent-filter>
+    </receiver>
+    <service android:name="com.appsee.AppseeBackgroundUploader" />
+    <activity android:label="About Us" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.AboutActivity" />
+    <activity android:label="@string/ApplicationName" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.Activity12" />
+    <activity android:label="@string/ApplicationName" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.Activitylo" />
+    <activity android:label="Wine Outlet" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.Login" />
+    <activity android:icon="@drawable/icon" android:label="@string/ApplicationName" android:noHistory="true" android:theme="@style/Theme.Splash" android:name="md50912886b321ab5443c0818d74ee0a940.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:label="My Favorites" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.MyFavoriteAvtivity" />
+    <activity android:label="My Tastings" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.MyTastingActivity" />
+    <activity android:label="MyProfile" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.PotraitActivity" />
+    <activity android:label="Edit Profile" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.ProfileActivity" />
+    <activity android:label="@string/ApplicationName" android:screenOrientation="portrait" android:theme="@android:style/Theme.Dialog" android:name="md50912886b321ab5443c0818d74ee0a940.ProfilePicturePickDialog" />
+    <activity android:icon="@drawable/logo5" android:label="Wine Details" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.DetailViewActivity" />
+    <activity android:icon="@drawable/icon" android:label="@string/ApplicationName" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.LoginActivity" />
+    <activity android:label="Available Wines" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.GridViewActivity" />
+    <activity android:label="My Reviews" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.MyReviewActivity" />
+    <activity android:label="Verification" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.VerificationActivity" />
+    <activity android:label="Wineoutletweb" android:name="md50912886b321ab5443c0818d74ee0a940.Wineoutletweb" />
+    <service android:exported="false" android:name="md50912886b321ab5443c0818d74ee0a940.MyGcmListenerService">
+      <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+      </intent-filter>
+    </service>
+    <service android:exported="false" android:name="md50912886b321ab5443c0818d74ee0a940.MyInstanceIDListenerService">
+      <intent-filter>
+        <action android:name="com.google.android.gms.iid.InstanceID" />
+      </intent-filter>
+    </service>
+    <service android:exported="false" android:name="md50912886b321ab5443c0818d74ee0a940.RegistrationIntentService" />
+    <activity android:configChanges="keyboardHidden|orientation|screenLayout" android:label="Scanner" android:name="md5e2ed3c6b13fcfff19371c0219cb2ee1f.ZxingActivity" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.savvyitsol.wineoulet.mono.MonoRuntimeProvider.__mono_init__" />
+    <!--suppress ExportedReceiver-->
+    <receiver android:name="mono.android.Seppuku">
+      <intent-filter>
+        <action android:name="mono.android.intent.action.SEPPUKU" />
+        <category android:name="mono.android.intent.category.SEPPUKU.com.savvyitsol.wineoulet" />
+      </intent-filter>
+    </receiver>
+    <provider android:authorities="com.savvyitsol.wineoulet.firebaseinitprovider" android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:initOrder="100" />
+    <!-- FirebaseMessagingService performs security checks at runtime,
+             no need for explicit permissions despite exported="true" -->
+    <service android:name="com.google.firebase.messaging.FirebaseMessagingService" android:exported="true">
+      <intent-filter android:priority="-500">
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
+      </intent-filter>
+    </service>
+    <activity android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:exported="false" />
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+  </application>
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+</manifest>
