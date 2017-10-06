@@ -20,7 +20,7 @@
             android:layout_below="@+id/header_cover_image"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="-60dp"
-            android:background="@drawable/profile_circular_border_imageview"
+           
             android:elevation="5dp"
             android:padding="20dp"
             android:scaleType="centerCrop"
@@ -70,7 +70,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="0.0dp"
                 android:layout_marginTop="7.5dp"
-                android:src="@drawable/dot"
+               
                 android:background="@null"
                 android:textSize="20dp" />
             <TextView

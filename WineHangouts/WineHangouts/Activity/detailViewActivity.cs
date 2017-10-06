@@ -206,16 +206,16 @@ namespace WineHangouts
 
                     HighImageWine = FindViewById<ImageView>(Resource.Id.WineImage);
 
-                    BitmapFactory.Options options = new BitmapFactory.Options
-                    {
-                        InJustDecodeBounds = false,
-                        OutHeight = 75,
-                        OutWidth = 75
+                   // BitmapFactory.Options options = new BitmapFactory.Options
+                   // {
+                   //     InJustDecodeBounds = false,
+                   //     OutHeight = 75,
+                   //     OutWidth = 75
 
-                    };
-                   // ProgressIndicator.Hide();
-                    LoggingClass.LogInfo("Entered into detail view" + WineBarcode, screenid);
-                    Bitmap result = BitmapFactory.DecodeResource(Resources, Resource.Drawable.placeholder_re, options);
+                   // };
+                   //// ProgressIndicator.Hide();
+                   // LoggingClass.LogInfo("Entered into detail view" + WineBarcode, screenid);
+                   // Bitmap result = BitmapFactory.DecodeResource(Resources, Resource.Drawable.placeholder_re, options);
                 }
                 catch (Exception exe)
                 {

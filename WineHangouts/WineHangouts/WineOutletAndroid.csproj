@@ -175,17 +175,13 @@
     <Compile Include="Activity\Activity12.cs" />
     <Compile Include="Activity\Activitylo.cs" />
     <Compile Include="Activity\AlertActivity.cs" />
-    <Compile Include="Activity\AutoCompleteTextActivity.cs" />
-    <Compile Include="Activity\EditReview.cs" />
     <Compile Include="Activity\Login.cs" />
     <Compile Include="Activity\MainActivity.cs" />
     <Compile Include="Activity\MyFavoriteAvtivity.cs" />
     <Compile Include="Activity\MyTastingActivity.cs" />
     <Compile Include="Activity\PotraitActivity.cs" />
     <Compile Include="Activity\ProfileActivity.cs" />
-    <Compile Include="Activity\ProfilePictureGallery.cs" />
     <Compile Include="Activity\ProfilePicturePickDialog.cs" />
-    <Compile Include="Activity\TabActivity.cs" />
     <Compile Include="Activity\detailViewActivity.cs" />
     <Compile Include="Activity\DeleteReview.cs" />
     <Compile Include="Activity\DialogReview.cs" />
@@ -194,7 +190,6 @@
     <Compile Include="Activity\DummyActivity.cs" />
     <Compile Include="Activity\GridViewActivity.cs" />
     <Compile Include="Activity\MyReviewActivity.cs" />
-    <Compile Include="Activity\VerificationActivity.cs" />
     <Compile Include="Activity\Wineoutletweb.cs" />
     <Compile Include="Adapters\DetailsViewAdapter.cs" />
     <Compile Include="Adapters\GridViewAdapter.cs" />
@@ -225,21 +220,13 @@
     <None Include="GettingStarted.Xamarin" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\AutoCompleteTextLayout.axml" />
-    <AndroidResource Include="Resources\layout\cell.axml" />
     <AndroidResource Include="Resources\layout\CommentsCell.axml" />
     <AndroidResource Include="Resources\layout\DeleteReviewPop.axml" />
     <AndroidResource Include="Resources\layout\detailedView.axml" />
-    <AndroidResource Include="Resources\layout\Dummy.axml" />
     <AndroidResource Include="Resources\layout\EditReviewPopup.axml" />
-    <AndroidResource Include="Resources\layout\EmailVerificationLayout.axml" />
     <AndroidResource Include="Resources\layout\FavEmp.axml" />
-    <AndroidResource Include="Resources\layout\Fragment.axml" />
     <AndroidResource Include="Resources\layout\Fragment1Layout.axml" />
-    <AndroidResource Include="Resources\layout\Landscape.axml" />
-    <AndroidResource Include="Resources\layout\LandscapeCell.axml" />
     <AndroidResource Include="Resources\layout\ListView.axml" />
-    <AndroidResource Include="Resources\layout\LocationLayout.axml" />
     <AndroidResource Include="Resources\layout\login.axml" />
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\layout\MyFavorite.axml" />
@@ -247,27 +234,20 @@
     <AndroidResource Include="Resources\layout\MyReviewsCell.axml" />
     <AndroidResource Include="Resources\layout\MyTasting.axml" />
     <AndroidResource Include="Resources\layout\MyTastingView.axml" />
-    <AndroidResource Include="Resources\layout\OtpReceiverLayout.axml" />
-    <AndroidResource Include="Resources\layout\Potrait.axml" />
-    <AndroidResource Include="Resources\layout\PotraitListView.axml" />
     <AndroidResource Include="Resources\layout\Profile.axml" />
     <AndroidResource Include="Resources\layout\ProfileCell.axml" />
-    <AndroidResource Include="Resources\layout\ProfilePickLayout.axml" />
     <AndroidResource Include="Resources\layout\ReviewEmpty.axml" />
     <AndroidResource Include="Resources\layout\ReviewPopup.axml" />
     <AndroidResource Include="Resources\layout\Tasting.axml" />
-    <AndroidResource Include="Resources\layout\TastingListview.axml" />
     <AndroidResource Include="Resources\layout\WinePropertiesCell.axml" />
     <AndroidResource Include="Resources\layout\EmptyTaste.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\Thumbs.db" />
     <AndroidResource Include="Resources\layout\About.axml" />
-    <AndroidResource Include="Resources\layout\FavView.axml" />
     <AndroidResource Include="Resources\layout\Hangouts.axml" />
     <AndroidResource Include="Resources\layout\Location.axml" />
     <AndroidResource Include="Resources\layout\LoginView.axml" />
-    <AndroidResource Include="Resources\layout\RevEmp.axml" />
     <AndroidResource Include="Resources\layout\Start.axml" />
     <AndroidResource Include="Resources\layout\WineoutletWeb.axml" />
   </ItemGroup>
@@ -280,24 +260,6 @@
     <None Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_tab_white.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_tab_white1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\placeholder.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\placeholder_11.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\placeholder_bottiglia_lista.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\placeholder_re.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Tes.png" />
@@ -321,37 +283,13 @@
     <AndroidResource Include="Resources\values\colors.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\mail.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_action_place.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_action_person.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_action_email.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_action_map.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\rounded_corner.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Border_line.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\circle.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\img.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\shop.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\taste.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\options_menu.xml">
@@ -377,18 +315,6 @@
     <AndroidResource Include="Resources\drawable\ProfileEmpty.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Camer.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Galler.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\camera.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\gallry.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\options_menu_1.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -398,9 +324,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\bottle.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\giphy.gif" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ReviewIns.png" />
@@ -422,15 +345,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Card1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_tab_my_schedule.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_tab_my_schedule_selected.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_tab_my_schedule_unselected.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_tab_sessions.xml" />
@@ -484,9 +398,6 @@
     <AndroidResource Include="Resources\drawable\locations.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Image5.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\card.png" />
   </ItemGroup>
   <ItemGroup>
@@ -494,12 +405,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\myhangouts.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\profile_circular_border_imageview.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\dot.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\addPRo.png" />

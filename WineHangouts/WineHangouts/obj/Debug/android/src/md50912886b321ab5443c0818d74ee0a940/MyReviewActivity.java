@@ -14,7 +14,6 @@ public class MyReviewActivity
 			"n_onPause:()V:GetOnPauseHandler\n" +
 			"n_onResume:()V:GetOnResumeHandler\n" +
 			"n_onOptionsItemSelected:(Landroid/view/MenuItem;)Z:GetOnOptionsItemSelected_Landroid_view_MenuItem_Handler\n" +
-			"n_onBackPressed:()V:GetOnBackPressedHandler\n" +
 			"";
 		mono.android.Runtime.register ("WineHangouts.MyReviewActivity, WineHangouts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", MyReviewActivity.class, __md_methods);
 	}
@@ -58,14 +57,6 @@ public class MyReviewActivity
 	}
 
 	private native boolean n_onOptionsItemSelected (android.view.MenuItem p0);
-
-
-	public void onBackPressed ()
-	{
-		n_onBackPressed ();
-	}
-
-	private native void n_onBackPressed ();
 
 	private java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
