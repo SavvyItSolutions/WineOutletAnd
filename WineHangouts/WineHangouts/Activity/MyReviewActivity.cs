@@ -148,12 +148,12 @@ namespace WineHangouts
         {
             return (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, pixels, Resources.DisplayMetrics);
         }
-        public async override void OnBackPressed()
-        {
-            var intent = new Intent(this, typeof(Login));
-            StartActivity(intent);
-            GC.Collect();
-        }
+        //public async override void OnBackPressed()
+        //{
+        //    var intent = new Intent(this, typeof(Login));
+        //    StartActivity(intent);
+        //    GC.Collect();
+        //}
         public void RefreshParent()
         {
             ServiceWrapper svc = new ServiceWrapper();

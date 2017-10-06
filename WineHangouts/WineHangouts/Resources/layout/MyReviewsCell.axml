@@ -52,7 +52,7 @@
                         android:layout_margin="2dp"
                         android:lines="2"
                         android:layout_width="200dp"
-                        android:layout_height="21.0dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1" />
                     <ImageButton
                         android:src="@drawable/edit"
@@ -155,7 +155,7 @@
                         android:inputType="textMultiLine"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:layout_column="0"
-                        android:textSize="25px"
+                        android:textSize="28px"
                         android:id="@+id/textView66"
                         android:textColor="#377f00"
                         android:layout_margin="2dp"

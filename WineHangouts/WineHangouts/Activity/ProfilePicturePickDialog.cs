@@ -64,7 +64,7 @@ namespace WineHangouts
                     Intent intent1 = new Intent(this, typeof(ProfileActivity));
                     StartActivity(intent1);
                 }
-                Resize();
+               // Resize();
                 UploadProfilePic(path);
                 Intent intent = new Intent(this, typeof(ProfileActivity));
                 StartActivity(intent);
@@ -128,27 +128,27 @@ namespace WineHangouts
             return availableActivities != null && availableActivities.Count > 0;
         }
 
-        public void Resize()
-        {
-            try
-            {
-                Bitmap propic = BitmapFactory.DecodeFile(path);
-                ProfileActivity pa = new ProfileActivity();
-                Bitmap resized = pa.ResizeAndRotate(propic, 400, 400);
+        //public void Resize()
+        //{
+        //    try
+        //    {
+        //        Bitmap propic = BitmapFactory.DecodeFile(path);
+        //        ProfileActivity pa = new ProfileActivity();
+        //        Bitmap resized = pa.ResizeAndRotate(propic, 400, 400);
 
-                var filePath = System.IO.Path.Combine(path);
-                var stream = new FileStream(filePath, FileMode.Create);
-                resized.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
-                stream.Close();
-                propic.Dispose();
-                resized.Dispose();
-            }
-            catch (Exception exe)
-            {
-                LoggingClass.LogError(exe.Message, screenid, exe.StackTrace.ToString());
-            }
+        //        var filePath = System.IO.Path.Combine(path);
+        //        var stream = new FileStream(filePath, FileMode.Create);
+        //        resized.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
+        //        stream.Close();
+        //        propic.Dispose();
+        //        resized.Dispose();
+        //    }
+        //    catch (Exception exe)
+        //    {
+        //        LoggingClass.LogError(exe.Message, screenid, exe.StackTrace.ToString());
+        //    }
 
-        }
+        //}
 
         private void TakeAPicture(object sender, EventArgs eventArgs)
         {

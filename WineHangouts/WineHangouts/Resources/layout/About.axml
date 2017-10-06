@@ -36,7 +36,17 @@
             android:textStyle="bold"
             android:layout_marginLeft="3.0dp" />
         <TextView
-            android:text="A delicious bottled wine is the way to the perfect blend of joy. Wine Outlet is thus, developed to facilitate the wine lovers to deliver a complete wine experience through the internationally acclaimed wines and beers. Sticking strict to the quality, Wine Outlet brings in the best self-serve partners in the industry: Enomatic- The World’s #1Wine Dispenser and Wine Preservation System. "
+            android:text="“Wine is inspiring and adds greatly to the joy of living”-Napoleon Bonaparte."
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:textColor="#594f4f"
+            android:layout_marginLeft="9.5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5.0dp" />
+        <TextView
+            android:text=" The Wine Outlet app was developed to deliver the complete wine experience of internationally acclaimed wines while easing the pressure in choosing an exceptional wine. Wine Outlet has partnered with the world’s number 1 wine dispensing and preservation system Enomatic, a self-serve system that provides customers with a try before you buy experience."
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,7 +66,7 @@
             android:layout_marginBottom="12.0dp"
             android:layout_marginLeft="3.0dp" />
         <TextView
-            android:text="Wine Outlet ensures the perfect backdrop to relish and to hang out with the wine and beer lovers, through over 24 assorted wines from the world’s best wineries. Each of our wine outlets is assured with one of the largest inventories of wine you can experience in New Jersey. The exclusive opportunity for our privileged customers makes it more enticing by offering FREE tasting of the 24 wines out of our huge collection."
+            android:text="Through over 24 assorted wines to sample from, Wine Outlet presents the perfect backdrop connecting wine lovers with the opportunity to try new wines before they buy. Our enticing VIP program allows customers an exclusive opportunity to sample for FREE from 24 personally selected wines. Stocked with one of the largest selections throughout New Jersey, each Wine Outlet will be the perfect spot for both the novice and connoisseur. "
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,7 +86,7 @@
             android:layout_marginTop="11.0dp"
             android:layout_marginLeft="3.0dp" />
         <TextView
-            android:text=" We offer- not just the wines and beers, but an experience of enjoyment.Upon the credential authentication, the mobile application- Wine Hangout takes our privileged customers to the virtual vineyard of savors and flavors, through the following options:"
+            android:text=" We offer an experience of enjoyment. Upon the authentication, our exciting mobile application, Wine Outlet, takes our privileged customers to the virtual vineyard of savors and flavors, through the following options:"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -85,7 +95,7 @@
             android:layout_marginLeft="9.5dp"
             android:layout_marginRight="10dp" />
         <TextView
-            android:text="Pick the Choice: Guest is displayed with all the available wines for tasting."
+            android:text="Pick the Choice: Guest users also can see all the available wines for tasting."
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -95,7 +105,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="6.5dp" />
         <TextView
-            android:text=" My Tasting: See the list of wines you have tasted and choose more from the remaining surprises."
+            android:text=" My Tasting: See the list of wines you have tasted."
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -115,7 +125,7 @@
             android:layout_marginRight="14.0dp"
             android:layout_marginBottom="6.5dp" />
         <TextView
-            android:text="My Favorites: Pick your favorites and we save the list to send you customized notifications when there are any discounts or available for wine tasting."
+            android:text="My Favorites: Pick your favorites and we send you customized notifications when there are any discounts or available for wine tasting."
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -155,7 +165,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="6.5dp" />
         <TextView
-            android:text=" Rate and Review is the spot for rating your favorite wine and Wine Outlet displays the average rating and the individual rating of the users."
+            android:text="Please provide rating and review for your favorite wine. Wine Outlet app displays the average rating and the individual rating of the users."
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -189,7 +199,7 @@
             android:gravity="center"
             android:textColor="#594f4f" />
         <TextView
-            android:text="savvyitsol@gmail.com"
+            android:text="Sales@wineoutlet.com"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

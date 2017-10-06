@@ -140,6 +140,7 @@ namespace WineHangouts
                 Drop.Click += (s, arg) =>
                 {
                     Intent intent = new Intent(this, typeof(ProfileActivity));
+                    ProgressIndicator.Show(this);
                     StartActivity(intent);
                     //PopupMenu menu = new PopupMenu(this, Drop);
                     //menu.Inflate(Resource.Drawable.options_menu_1);

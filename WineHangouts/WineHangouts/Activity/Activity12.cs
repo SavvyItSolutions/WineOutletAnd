@@ -132,6 +132,7 @@ namespace WineHangouts
                         ProgressIndicator.Show(this);
                         StartActivity(intent);
                     }
+                    else
                     {   
                         AlertDialog.Builder aler = new AlertDialog.Builder(this, Resource.Style.MyDialogTheme);
                         aler.SetMessage("Please Select your preferred store!");

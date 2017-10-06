@@ -71,7 +71,6 @@
                 <EditText
                     android:id="@+id/txtFirstName"
                     android:singleLine="false"
-                    android:inputType="textFilter|textMultiLine|textNoSuggestions"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:textSize="13dp"
@@ -82,7 +81,8 @@
                     android:layout_weight="1"
                     android:background="@android:drawable/editbox_background"
                     android:layout_width="230dp"
-                    android:layout_marginTop="8.0dp" />
+                    android:layout_marginTop="8.0dp"
+                    android:inputType="text" />
             </TableRow>
             <TableRow
                 android:id="@+id/tableRow3"
@@ -105,7 +105,6 @@
                 <EditText
                     android:id="@+id/txtLastName"
                     android:singleLine="false"
-                    android:inputType="textFilter|textMultiLine|textNoSuggestions"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_width="230dp"
@@ -115,7 +114,8 @@
                     android:layout_alignBottom="@+id/textView12"
                     android:textColorHint="#aaa"
                     android:layout_marginLeft="0.0dp"
-                    android:background="@android:drawable/editbox_background" />
+                    android:background="@android:drawable/editbox_background"
+                    android:inputType="text" />
             </TableRow>
             <TableRow
                 android:id="@+id/tableRow3"
@@ -137,7 +137,7 @@
                 <EditText
                     android:id="@+id/txtEmail"
                     android:singleLine="false"
-                    android:inputType="textFilter|textMultiLine|textNoSuggestions|textEmailAddress"
+                    android:inputType="textEmailAddress"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:textSize="15dp"
@@ -170,7 +170,7 @@
                     android:textColor="@android:color/black"
                     android:textSize="13dp"
                     android:singleLine="false"
-                    android:inputType="textFilter|textMultiLine|textNoSuggestions|phone"
+                    android:inputType="phone"
                     android:typeface="sans"
                     android:layout_weight="0.5"
                     android:layout_marginLeft="0.0dp"
@@ -198,7 +198,6 @@
                     android:layout_marginLeft="0.0dp" />
                 <EditText
                     android:id="@+id/txtAddress"
-                    android:inputType="textFilter|textMultiLine|textNoSuggestions"
                     android:minLines="5"
                     android:singleLine="false"
                     android:layout_height="48.5dp"
@@ -210,7 +209,8 @@
                     android:typeface="sans"
                     android:textColorHint="#aaa"
                     android:layout_span="2"
-                    android:background="@android:drawable/editbox_background" />
+                    android:background="@android:drawable/editbox_background"
+                    android:inputType="textLongMessage" />
             </TableRow>
             <TableRow
                 android:id="@+id/tableRow5"

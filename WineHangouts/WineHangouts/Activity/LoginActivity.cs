@@ -62,28 +62,23 @@ namespace WineHangouts
                 IntoApp();
             }
             else
-            {
-                //Intent intent = new Intent(this, typeof(Login));
-                //ProgressIndicator.Show(this);
-                //LoggingClass.LogInfo("User Tried to login with Guest Login ", screenid);
-                //StartActivity(intent);
-                if (CurrentUser.GetCardNumber() != null)
-                {
-                    Preinfo(CurrentUser.GetCardNumber());
-                }
+            { 
+                //if (CurrentUser.GetCardNumber() != null)
+                //{
+                //    Preinfo(CurrentUser.GetCardNumber());
+                //}
                 ImageButton BtnScanner = FindViewById<ImageButton>(Resource.Id.btnScanner);
                 Button BtnGuestLogin = FindViewById<Button>(Resource.Id.btnGuestLogin);
                 LoggingClass.LogInfo("Opened the app", screenid);
-
-                BtnScanner.Click += async delegate
+                BtnScanner.Click +=  delegate
                 {
-
+                   
                     try
                     {
                         MobileBarcodeScanner.Initialize(Application);
                         var scanner = new ZXing.Mobile.MobileBarcodeScanner();
                         scanner.UseCustomOverlay = false;
-                        var result = "8902519310330";// "900497354894";//await scanner.Scan();
+                        var result ="8902519310330";// "900497354894";//await scanner.Scan();
                         if (result != null)
                         {
                             LoggingClass.LogInfo("User Tried to login with " + result, screenid);
@@ -92,13 +87,11 @@ namespace WineHangouts
                             txtmail.Visibility = ViewStates.Gone;
                             Txtem.Visibility = ViewStates.Gone;
                         }
-
                     }
                     catch (Exception exe)
                     {
                         LoggingClass.LogError(exe.Message, screenid, exe.StackTrace);
-                    }
-                    BtnScanner.Click -= null;
+                    } 
                 };
 
                 BtnGuestLogin.Click += async delegate
@@ -135,8 +128,6 @@ namespace WineHangouts
                     });
                     TaskB.Start();
                 }
-
-
                 var telephonyDeviceID = string.Empty;
                 var telephonySIMSerialNumber = string.Empty;
                 TelephonyManager telephonyManager = (TelephonyManager)this.ApplicationContext.GetSystemService(Context.TelephonyService);
@@ -180,14 +171,22 @@ namespace WineHangouts
         }
         public async void Preinfo(string CardNumber)
         {
-            int count = 0;
-
             AndHUD.Shared.Show(this, "Please Wait...", Convert.ToInt32(MaskType.Clear));
             try
             {
                 BtnLogin.Visibility = ViewStates.Gone;
                 BtnResend.Visibility = ViewStates.Gone;
+                try
+                {
+                    //CurrentUser.
+                    EmailVerification(false);
+                }
+                catch (Exception ex)
+                {
+                    LoggingClass.LogError(ex.Message, screenid, ex.StackTrace);
+                }
                 AuthServ = await svc.AuthencateUser("test", CardNumber, CurrentUser.GetDeviceID());
+                CurrentUser.SaveInternalCustometID(AuthServ.customer.CustomerID.ToString());
                 LoggingClass.LogInfo("User Tried to login with " + CardNumber, screenid);
                 if (CardNumber != null)
                 {
@@ -195,12 +194,11 @@ namespace WineHangouts
                 }
                 if (AuthServ != null)
                 {
-
+                    CurrentUser.SaveUserName(AuthServ.customer.FirstName + AuthServ.customer.LastName, AuthServ.customer.CustomerID.ToString());
+                    CurrentUser.SavePrefered(AuthServ.customer.PreferredStore);
                     if (AuthServ.customer.Email != "" && AuthServ.customer.Email != null)
                     {
-                        //int x = await svc.UpdateMail1(AuthServ.customer.Email, AuthServ.customer.FirstName);
                         SendRegistrationToAppServer(CurrentUser.getDeviceToken());
-                        int count1 = 0;
                         if (AuthServ.ErrorDescription != null || AuthServ.ErrorDescription == "")
                         {
                             TxtScanresult.Text = AuthServ.ErrorDescription;
@@ -215,17 +213,13 @@ namespace WineHangouts
                         update.Visibility = ViewStates.Visible;
                         BtnContinue.Click += async delegate
                         {
-                            if (count1 == 0)
                             {
                                 AndHUD.Shared.Show(this, " Please Wait...", Convert.ToInt32(MaskType.Clear));
-                                count1 = 1;
                                 AuthServ = await svc.ContinueService(AuthServ);
                                 ShowInfo(AuthServ);
                                 AndHUD.Shared.Dismiss();
-
                             }
-                        };
-                        count1 = 0;
+                        };  
                         update.Click += delegate
                         {
                             TxtScanresult.Text = "";
@@ -234,23 +228,16 @@ namespace WineHangouts
                             txtmail.Visibility = ViewStates.Visible;
                             Txtem.Visibility = ViewStates.Visible;
                             BtnUpdateEmail.Visibility = ViewStates.Visible;
-
-
                         };
-                        count = 0;
                         BtnUpdateEmail.Click += delegate
-                        {
-                            if (count == 0)
+                        { 
                             {
-                                BtnUpdateEmail_Click("please enter your new e-mail id.");
-                                count = 1;
+                                BtnUpdateEmail_Click("please enter your new e-mail id.");  
                             }
                         };
-                        count = 0;
                     }
                     else
                     {
-
                         if (AuthServ.ErrorDescription != null || AuthServ.ErrorDescription == "")
                         {
                             TxtScanresult.Text = AuthServ.ErrorDescription;
@@ -268,7 +255,6 @@ namespace WineHangouts
                         BtnUpdateEmail.Click += delegate
                         {
                             BtnUpdateEmail_Click("please enter your new e-mail id.");
-                            count = 1;
                         };
                     }
                 }
@@ -296,27 +282,10 @@ namespace WineHangouts
 
                 txtmail.SetTextColor(Color.Black);
 
-                //{
-                //    AlertDialog.Builder aler = new AlertDialog.Builder(this, Resource.Style.MyDialogTheme);
-                //    LoggingClass.LogInfo("Entered Incorrect Details", screenid);
-                //    aler.SetTitle(Message);
-
-                //    EditText txtEmail = new EditText(this);
-                //    txtEmail.SetTextColor(Color.Black);
-                //    txtEmail.FocusableInTouchMode = true;
-                //    aler.SetView(txtEmail);
-                //    aler.SetPositiveButton("Update", async delegate
-                //    {
-
-                //        int count = 0;
-                //        if (count == 0)
-                // {
                 if (txtmail.Text == null || txtmail.Text == "")
                 {
-                    //BTProgressHUD.ShowErrorWithStatus("Email is invalid",3000);
                     TxtScanresult.SetTextColor(Android.Graphics.Color.Red);
                     TxtScanresult.Text = "Please enter your email.";
-
                 }
                 else if (txtmail.Text.Contains("@") != true && txtmail.Text.Contains(".") != true)
                 {
@@ -326,39 +295,19 @@ namespace WineHangouts
                 else
                 {
                     AndHUD.Shared.Show(this, "Updating...Please Wait...", Convert.ToInt32(MaskType.Clear));
-                    //BTProgressHUD.ShowSuccessWithStatus("We're sending mail to the updated mail");
-                    //CurrentUser.PutEmail(txtEmail.Text);
                     AuthServ = await svc.UpdateMail(txtmail.Text, AuthServ.customer.CustomerID.ToString());
                     ShowInfo(AuthServ);
-                    AndHUD.Shared.Dismiss();
-
-                    //AndHUD.Shared.ShowSuccess(Parent, "Updated!", MaskType.Clear, TimeSpan.FromSeconds(2));
-                }
-                //        }
-                //        count = 1;
-                //    });
-
-                //    aler.SetNegativeButton("Cancel", (senderAlert, args) =>
-                //    {
-                //        int cou = 0;
-                //        if (cou == 0)
-                //        {
-                //            Toast.MakeText(this, "Cancelled!", ToastLength.Short).Show();
-                //        }
-                //        cou = 1;
-                //    });
-
-                //    Dialog dialog = aler.Create();
-                //    dialog.Show();
+                    AndHUD.Shared.Dismiss();  
+                } 
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+
+            }
 
         }
         public async void ShowInfo(CustomerResponse AuthServ)
         {
-            int count = 0;
-          
-
             AndHUD.Shared.Show(this, "Please Wait...", Convert.ToInt32(MaskType.Clear));
             try
             {
@@ -377,34 +326,22 @@ namespace WineHangouts
                     BtnResend.Click += async delegate
                         {
                             try
-                            {
-                                if (count == 0)
-                                {
-                                    AndHUD.Shared.Show(this, "Sending verification email to " + AuthServ.customer.Email, Convert.ToInt32(MaskType.Clear));
-                                    count = 1;
+                            {       AndHUD.Shared.Show(this, "Sending verification email to " + AuthServ.customer.Email, Convert.ToInt32(MaskType.Clear));
                                     LoggingClass.LogInfo("Resend email " + AuthServ.customer.Email, screenid);
                                     await svc.ResendEMail(CurrentUser.GetCardNumber());
                                     AndHUD.Shared.ShowSuccess(this, "Sent", MaskType.Clear, TimeSpan.FromSeconds(2));
                                     AndHUD.Shared.Dismiss();
-
-                                }
-
                             }
                             catch (Exception ex)
                             {
                             }
-
                         };
-                    count = 0;
                     BtnLogin.Click += delegate
                     {
                         LoggingClass.LogInfo("Clicked on Login " + AuthServ.customer.CardNumber, screenid);
-
                         AndHUD.Shared.Show(this, "Checking Email Verification", Convert.ToInt32(MaskType.Clear));
-                        EmailVerification();
-
+                        EmailVerification(true);
                     };
-
                 }
                 else
                 {
@@ -433,33 +370,32 @@ namespace WineHangouts
                 DeviceToken = token,
                 DeviceType = 1
             };
-
             LoggingClass.LogInfoEx("Token sent to db", screenid);
             int x = await svc.InsertUpdateToken1(_token);
-
         }
-        public async void EmailVerification()
+        public async void EmailVerification(Boolean Load)
         {
-            int count = 0;
-            if (count == 0)
+            if (Load == true)
             {
                 AndHUD.Shared.Show(this, "Checking Email Verification", Convert.ToInt32(MaskType.Clear));
-                //AuthServ = await svc.AuthencateUser("test", CurrentUser.GetCardNumber(), CurrentUser.GetDeviceID());
+            }
                 DeviceToken DO = new DeviceToken();
                 try
                 {
-                    DO = await svc.CheckMail(AuthServ.customer.CustomerID.ToString());
-                   
-                    if (DO.VerificationStatus == 1)
+                //  DO = await svc.CheckMail(AuthServ.customer.CustomerID.ToString());
+                DO = await svc.CheckMail(CurrentUser.GetInternalCustometID());
+
+                if (DO.VerificationStatus == 1)
                     {
-                        if (AuthServ.customer != null && AuthServ.customer.CustomerID != 0)
-                        {
-                            LoggingClass.LogInfo("The User logged in with user id: " + CurrentUser.getUserId(), screenid);
-                            CurrentUser.SaveUserName(AuthServ.customer.FirstName + AuthServ.customer.LastName, AuthServ.customer.CustomerID.ToString());
+                    //  if (AuthServ.customer != null && AuthServ.customer.CustomerID != 0)
+                    if (CurrentUser.GetInternalCustometID() != null &&Convert.ToInt32( CurrentUser.GetInternalCustometID() )!=0)
+                    {
+                           // LoggingClass.LogInfo("The User logged in with user id: " + CurrentUser.getUserId(), screenid);
+                          
                             SendRegistrationToAppServer(CurrentUser.getDeviceToken());
-                            CurrentUser.SavePrefered(AuthServ.customer.PreferredStore);
-                            int storename = AuthServ.customer.PreferredStore;
-                            if (storename == 1)
+                        // CurrentUser.SavePrefered(AuthServ.customer.PreferredStore);
+                        int storename =Convert.ToInt32( CurrentUser.GetPrefered());///AuthServ.customer.PreferredStore;
+                        if (storename == 1)
                             {
                                 Intent intent = new Intent(this, typeof(GridViewActivity));
                                 intent.PutExtra("MyData", "Wall Store");
@@ -487,48 +423,36 @@ namespace WineHangouts
                         }
                         else
                         {
-                            int count12 = 0;
-                            if (count12 == 0)
-                            {
-                                AlertDialog.Builder aler = new AlertDialog.Builder(this, Resource.Style.MyDialogTheme);
+                            AlertDialog.Builder aler = new AlertDialog.Builder(this, Resource.Style.MyDialogTheme);
                                 aler.SetTitle("Sorry");
                                 aler.SetMessage("You entered wrong details or authentication failed");
                                 aler.SetNegativeButton("Ok", delegate { });
                                 Dialog dialog1 = aler.Create();
-                                dialog1.Show();
-                                //   AndHUD.Shared.ShowErrorWithStatus(this, "You entered wrong details or authentication failed", MaskType.Clear, TimeSpan.FromSeconds(2));
-                            }
-                            count12 = 1;
+                                dialog1.Show();  
                         };
                     }
                     else
                     {
                         AlertDialog.Builder aler = new AlertDialog.Builder(this, Resource.Style.MyDialogTheme);
-                        //aler.SetTitle("Sorry");
                         aler.SetMessage("Your email is not verified. please check email and verify.");
                         aler.SetNegativeButton("Ok", delegate { });
                         Dialog dialog = aler.Create();
-                        dialog.Show();
-                        // AndHUD.Shared.ShowErrorWithStatus(this, "Your email is not verified plesase check email and verify.", MaskType.Clear, TimeSpan.FromSeconds(2));
-                    }
-                    //ProgressIndicator.Hide();
+                        dialog.Show();  
+                    } 
                     AndHUD.Shared.Dismiss();
-
                 }
 
                 catch (Exception exe)
                 {
+                AndHUD.Shared.Dismiss();
                     LoggingClass.LogError(exe.Message, screenid, exe.StackTrace.ToString());
                 }
-                AndHUD.Shared.Dismiss();
-
-            }
-            count = 1;
-            BtnLogin.Dispose();
-            BtnResend.Dispose();
-            BtnContinue.Dispose();
-            BtnUpdateEmail.Dispose();
-            update.Dispose();
+            AndHUD.Shared.Dismiss();  
+            //BtnLogin.Dispose();
+            //BtnResend.Dispose();
+            //BtnContinue.Dispose();
+            //BtnUpdateEmail.Dispose();
+            //update.Dispose();
 
         }
         private bool IsPlayServicesAvailable()
@@ -561,50 +485,17 @@ namespace WineHangouts
                 gplaystatus = "Google Play Services is available.";
                 return true;
             }
-        }
-        //private void SendSmsgs(string userNumber)
-        //{
-        //	otp = RandomString(4);
-        //	int otpcount = otp.Count();
-        //	SmsManager.Default.SendTextMessage(userNumber.ToString(), null, "Your winehangouts Otp is:" + otp, null, null);
-        //	//otps.Add(otp);
-        //	//string httpreq="http://bhashsms.com/api/sendmsg.php?user=success&pass=********&sender=WineHangouts&phone=" + userNumber + "&text=" + otp + "&priority=dnd&stype=unicode";
-        //}
-        //private System.Random random = new System.Random();
-        //public string RandomString(int length)
-        //{
-        //	const string chars = "0123456789";
-        //	return new string(Enumerable.Repeat(chars, length)
-        //	  .Select(s => s[random.Next(s.Length)]).ToArray());
-        //}
-        //protected override void OnPause()
-        //{
-        //	base.OnPause();
-        //	LoggingClass.LogInfo("OnPause state in Login activity", screenid);
-        //}
-        //protected override void OnResume()
-        //{
-        //	base.OnResume();
-        //	LoggingClass.LogInfo("OnResume state in Login activity", screenid);
-        //}
+        } 
         public bool CheckInternetConnection()
         {
-
             string CheckUrl = "http://google.com";
-
             try
             {
                 HttpWebRequest iNetRequest = (HttpWebRequest)WebRequest.Create(CheckUrl);
-
                 iNetRequest.Timeout = 5000;
-
                 WebResponse iNetResponse = iNetRequest.GetResponse();
-
-                // Console.WriteLine ("...connection established..." + iNetRequest.ToString ());
                 iNetResponse.Close();
-
                 return true;
-
             }
             catch (WebException ex)
             {
@@ -623,10 +514,11 @@ namespace WineHangouts
             base.OnPause();
           
         }
-
         protected override void OnResume()
         {
+            EmailVerification(false);
             base.OnResume();
+
 
         }
         public  override void OnBackPressed()

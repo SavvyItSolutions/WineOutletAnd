@@ -111,6 +111,16 @@ namespace WineHangouts
             string GuestId = _pref.GetString("GuestId", null);
             return GuestId;
         }
+        public static void SaveInternalCustometID(string InternalCustometID)
+        {
+            _edit.PutString("InternalCustometID", InternalCustometID);
+            _edit.Apply();
+        }
+        public static string GetInternalCustometID()
+        {
+            string GuestId = _pref.GetString("InternalCustometID", null);
+            return GuestId;
+        }
     }
 
     public class ProgressIndicator
@@ -127,7 +137,7 @@ namespace WineHangouts
             progress.Window.SetBackgroundDrawable(new ColorDrawable(Android.Graphics.Color.Transparent));
             progress.SetProgressStyle(Android.App.ProgressDialogStyle.Spinner);
             //progress.SetProgressStyle(ProgressDialogStyle.Spinner);
-
+          //  progress.SetIcon(Resource.Drawable.Icon);
             progress.SetMessage("Loading... Please Wait...");
             
             progress.SetCancelable(false);
