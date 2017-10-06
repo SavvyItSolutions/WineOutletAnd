@@ -69,7 +69,7 @@ namespace WineHangouts
                 }
             else
             {
-                 row = LayoutInflater.From(myContext).Inflate(Resource.Layout.CommentsCell, null, false);
+                 row = LayoutInflater.From(myContext).Inflate(Resource.Layout.ReviewInDetail, null, false);
                 TextView Name = row.FindViewById<TextView>(Resource.Id.textView64);
                 TextView Comments = row.FindViewById<TextView>(Resource.Id.textView66);
                 TextView date = row.FindViewById<TextView>(Resource.Id.textView67);

@@ -20,7 +20,6 @@ namespace WineHangouts
         public int uid;
         private int screenid = 5;
         public ImageView Imag;
-        Context parent;
         public int x;
         public TextView txtName;
         protected override void OnCreate(Bundle bundle)
@@ -64,7 +63,7 @@ namespace WineHangouts
                 }
 				else
 				{
-                    SetContentView(Resource.Layout.Tasting);
+                    SetContentView(Resource.Layout.MyReviews);
                     var wineList = FindViewById<ListView>(Resource.Id.listView1);
 					Review edit = new Review();
 					ReviewPopup editPopup = new ReviewPopup(this, edit);
@@ -120,15 +119,9 @@ namespace WineHangouts
         {
             if (item.ItemId == Android.Resource.Id.Home)
             {
-                var intent = new Intent(this, typeof(Login));
-               // LoggingClass.LogInfo("Clicked on options menu About", screenid);
-                StartActivity(intent);
-
-
+                Finish();
                 GC.Collect();
-      
-        //base.OnBackPressed();
-        LoggingClass.LogInfo("Exited from My Review", screenid);
+                LoggingClass.LogInfo("Exited from My Review", screenid);
                 return false;
             }
             return base.OnOptionsItemSelected(item);
@@ -148,12 +141,6 @@ namespace WineHangouts
         {
             return (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, pixels, Resources.DisplayMetrics);
         }
-        //public async override void OnBackPressed()
-        //{
-        //    var intent = new Intent(this, typeof(Login));
-        //    StartActivity(intent);
-        //    GC.Collect();
-        //}
         public void RefreshParent()
         {
             ServiceWrapper svc = new ServiceWrapper();

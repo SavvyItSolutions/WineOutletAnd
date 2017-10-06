@@ -172,8 +172,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity\AboutActivity.cs" />
-    <Compile Include="Activity\Activity12.cs" />
-    <Compile Include="Activity\Activitylo.cs" />
+    <Compile Include="Activity\MyHangouts.cs" />
+    <Compile Include="Activity\MyLocations.cs" />
     <Compile Include="Activity\AlertActivity.cs" />
     <Compile Include="Activity\Login.cs" />
     <Compile Include="Activity\MainActivity.cs" />
@@ -220,7 +220,7 @@
     <None Include="GettingStarted.Xamarin" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\CommentsCell.axml" />
+    <AndroidResource Include="Resources\layout\ReviewInDetail.axml" />
     <AndroidResource Include="Resources\layout\DeleteReviewPop.axml" />
     <AndroidResource Include="Resources\layout\detailedView.axml" />
     <AndroidResource Include="Resources\layout\EditReviewPopup.axml" />
@@ -238,7 +238,7 @@
     <AndroidResource Include="Resources\layout\ProfileCell.axml" />
     <AndroidResource Include="Resources\layout\ReviewEmpty.axml" />
     <AndroidResource Include="Resources\layout\ReviewPopup.axml" />
-    <AndroidResource Include="Resources\layout\Tasting.axml" />
+    <AndroidResource Include="Resources\layout\MyReviews.axml" />
     <AndroidResource Include="Resources\layout\WinePropertiesCell.axml" />
     <AndroidResource Include="Resources\layout\EmptyTaste.axml">
       <SubType>Designer</SubType>

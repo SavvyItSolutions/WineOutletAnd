@@ -11,12 +11,7 @@ namespace WineHangouts
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            // Set our view from the "main" layout resource
-          
-            //Display Splash Screen for 4 Sec  
             Thread.Sleep(1000);
-            //Start Activity1 Activity  
             StartActivity(typeof(LoginActivity));
         }
     }

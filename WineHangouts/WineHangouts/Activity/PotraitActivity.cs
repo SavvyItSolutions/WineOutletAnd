@@ -372,17 +372,7 @@ namespace WineHangouts
             await container.CreateIfNotExistsAsync();
             CloudBlockBlob blob = container.GetBlockBlobReference(CurrentUser.getUserId() + ".jpg");
             LoggingClass.LogInfo("Updated profile picture", screenid);
-            //using (var fs = System.IO.File.Open(path, System.IO.FileMode.Open, System.IO.FileAccess.Read, System.IO.FileShare.None))
-            //{
-            //    await blob.UploadFromStreamAsync(fs);
-            //    LoggingClass.LogInfo("Profile picture uploaded into blob", screenid);
-            //}
-
             await blob.UploadFromByteArrayAsync(bitmapData, 0, bitmapData.Length);
-            GC.Collect();
-
-            //st.Stop();
-            //LoggingClass.LogTime("Upload profile pic ", st.Elapsed.TotalSeconds.ToString());
         }
         private void Resize(Android.Net.Uri uri)
         {
@@ -395,22 +385,16 @@ namespace WineHangouts
                 UploadProfilePicimagebutes(bitmapData1);
             });
             TaskA.Start();
-
-
         }
         private Android.Graphics.Bitmap NGetBitmap(Android.Net.Uri uriImage)
         {
             Android.Graphics.Bitmap mBitmap = null;
             try
             {
-
-
                 mBitmap = Android.Provider.MediaStore.Images.Media.GetBitmap(this.ContentResolver, uriImage);
-
             }
             catch { }
             return mBitmap;
-
         }
         public byte[] getBytesFromBitmap(Bitmap bitmap)
         {
@@ -494,10 +478,9 @@ namespace WineHangouts
         }
         public async override void OnBackPressed()
         {
-            //var intent = new Intent(this, typeof(Login));
-
-            //StartActivity(intent);
-             MoveTaskToBack(true);
+            var intent = new Intent(this, typeof(Login));
+            StartActivity(intent);
+          //  MoveTaskToBack(true);
             ProgressIndicator.Hide();
         }
 

@@ -349,7 +349,6 @@ C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\D
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\android\bin\com.savvyitsol.wineoulet.apk
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\drawable\cell_shape.xml
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\drawable\border.xml
-C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\commentscell.xml
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\deletereviewpop.xml
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\detailedview.xml
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\editreviewpopup.xml
@@ -367,7 +366,6 @@ C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\D
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\profilecell.xml
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\reviewempty.xml
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\reviewpopup.xml
-C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\tasting.xml
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\winepropertiescell.xml
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\emptytaste.xml
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\drawable\thumbs.db
@@ -461,5 +459,7 @@ C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\D
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\android\assets\System.Xml.dll.mdb
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\android\assets\WineHangouts.dll.mdb
+C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\reviewindetail.xml
+C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\myreviews.xml
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\WineHangouts.dll.mdb
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\bin\Debug\WineHangouts.dll.mdb

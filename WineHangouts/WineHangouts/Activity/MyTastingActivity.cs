@@ -133,13 +133,6 @@ namespace WineHangouts
 			base.OnPause();
 			LoggingClass.LogInfo("OnPause state in MyTasting ativity", screenid);
 		}
-        public async override void OnBackPressed()
-        {
-            //MoveTaskToBack(true);
-            var intent = new Intent(this, typeof(Login)); 
-            StartActivity(intent);
-            GC.Collect();
-        }
         protected override void OnResume()
 		{
 			base.OnResume();

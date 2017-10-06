@@ -39,13 +39,10 @@ namespace WineHangouts
 		{
 			CheckInternetConnection();
 			base.OnCreate(bundle);
-
 			SetContentView(Resource.Layout.Profile);
-			//st.Start();
 			try
 			{
                 GC.Collect();
-				///LoggingClass.UploadErrorLogs(LoggingClass.CreateDirectoryForLogs());
 				LoggingClass.LogInfo("Entered into Profile Activity", screenid);
 				ActionBar.SetHomeButtonEnabled(true);
 				ActionBar.SetDisplayHomeAsUpEnabled(true);
@@ -56,8 +53,6 @@ namespace WineHangouts
                 Button updatebtn = FindViewById<Button>(Resource.Id.UpdateButton);
                 Spinner spn = FindViewById<Spinner>(Resource.Id.spinner);
                 Spinner Prefered = FindViewById<Spinner>(Resource.Id.spinner1);
-                //TextView card = FindViewById<TextView>(Resource.Id.txtcard1);
-               // TextView exp = FindViewById<TextView>(Resource.Id.txtexp);
                 EditText Mobilenumber = FindViewById<EditText>(Resource.Id.txtMobileNumber);
                 EditText Lastname = FindViewById<EditText>(Resource.Id.txtLastName);
                 EditText Email = FindViewById<EditText>(Resource.Id.txtEmail);
@@ -91,10 +86,9 @@ namespace WineHangouts
                 }
                 else
                 {
-                    Firstname.Text = output.customer.FirstName;
-                  Lastname.Text = output.customer.LastName;
-                   
-                    string phno1 = output.customer.PhoneNumber;
+                Firstname.Text = output.customer.FirstName;
+                Lastname.Text = output.customer.LastName;  
+                string phno1 = output.customer.PhoneNumber;
 				string phno2 = output.customer.Phone2;
                 if (phno1 != null)
                 {
@@ -103,24 +97,19 @@ namespace WineHangouts
                 else
                 {
                     Mobilenumber.Text = phno2;
-                }
-                   
-                    Email.Text = output.customer.Email;
-                    
-                    string Addres2 = output.customer.Address2;
+                }   
+                Email.Text = output.customer.Email;    
+                string Addres2 = output.customer.Address2;
 				string Addres1 = output.customer.Address1;
 				Address.Text = string.Concat(Addres1, Addres2);
-                    
-                    PinCode.Text = output.customer.Zip;
-                   
-                    string state = output.customer.State;
+                PinCode.Text = output.customer.Zip;  
+                string state = output.customer.State;
 				int Preferedstore = output.customer.PreferredStore;
 				List<string> storelist = new List<string>();
 				storelist.Add("--Select your preferred store--");
 				storelist.Add("Wall");
 				storelist.Add("Point Pleasant");
 				storelist.Add("All");
-           
                 List<string> StateList = new List<string>();
 				StateList.Add("AL");
 				StateList.Add("AK");
@@ -172,15 +161,12 @@ namespace WineHangouts
 				StateList.Add("WV");
 				StateList.Add("WI");
 				StateList.Add("WY");
-                    try
-
-
+                    try    
                     {
                         int i = StateList.IndexOf(state.ToString());
-
                         spn.SetSelection(i);
                     }
-                    catch (Exception ex) { }
+                    catch { }
 				int p = storelist.IndexOf(Prefered.SelectedItem.ToString());
 				Prefered.SetSelection(Preferedstore);
                
@@ -207,11 +193,7 @@ namespace WineHangouts
                                 Address1 = Address.Text,
                                 Email = Email.Text,
                                 CustomerID = userId,
-                                //State = State.Text,
                                 State = spn.SelectedItem.ToString(),
-
-                                //City = City.Text
-                                //CardNumber = City.Text,
                                 Zip = PinCode.Text,
                                 PreferredStore = Convert.ToInt32(Prefered.SelectedItemId)
                             };
@@ -248,132 +230,21 @@ namespace WineHangouts
         {
             GC.Collect();
         }
-        //protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-        //{
-        //    try
-        //    {
-        //        if (resultCode.ToString() == "Canceled")
-        //        {
-        //            LoggingClass.LogInfo("Cancelled from camera", screenid);
-        //            Intent intent = new Intent(this, typeof(ProfileActivity));
-        //            StartActivity(intent);
-        //        }
-        //        else
-        //        {
-        //            if ((requestCode == PickImageId) && (resultCode == Result.Ok) && (data != null))
-        //            {
-        //                Android.Net.Uri uri = data.Data;
-        //                try
-        //                {
-
-
-        //                    Resize(uri);
-
-        //                    propicimage.SetImageURI(uri);
-
-        //                }
-        //                catch (Exception ex)
-        //                {
-        //                    propicimage.SetImageURI(uri);
-        //                }
-
-        //            }
-        //            else
-        //            {
-        //                try
-        //                {
-        //                    GC.Collect();
-        //                    Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
-        //                    Android.Net.Uri contentUri = Android.Net.Uri.FromFile(App._file);
-        //                    mediaScanIntent.SetData(contentUri);
-        //                    SendBroadcast(mediaScanIntent);
-
-        //                    int height = Resources.DisplayMetrics.HeightPixels;
-        //                    int width = propicimage.Height;
-        //                    App.bitmap = App._file.Path.LoadAndResizeBitmap(width, height);
-        //                    if (App.bitmap != null)
-        //                    {
-        //                        Bitmap pro = addWhiteBorder(App.bitmap, 14);
-        //                        Bitmap selectedimage = Resize(pro, 400, 400);
-        //                        byte[] bitmapData = getBytesFromBitmap(selectedimage);
-        //                        var TaskA = new System.Threading.Tasks.Task(() =>
-        //                        {
-        //                            UploadProfilePicimagebutes(bitmapData);
-        //                        });
-        //                        TaskA.Start();
-        //                        propicimage.SetImageBitmap(pro);
-        //                        App.bitmap = null;
-        //                    }
-
-        //                    GC.Collect();
-        //                }
-        //                catch (Exception ex)
-        //                {
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex) { }
-        //}
-
-        //private Android.Graphics.Bitmap NGetBitmap(Android.Net.Uri uriImage)
-        //{
-        //    Android.Graphics.Bitmap mBitmap = null;
-        //    try
-        //    {
-
-
-        //        mBitmap = Android.Provider.MediaStore.Images.Media.GetBitmap(this.ContentResolver, uriImage);
-
-        //    }
-        //    catch { }
-        //    return mBitmap;
-
-        //}
-        //public byte[] getBytesFromBitmap(Bitmap bitmap)
-        //{
-        //    //ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        //    //bitmap.Compress(CompressFormat.Jpeg, 70, stream);
-        //    //return stream.ToByteArray();
-
-        //    byte[] bitmapData;
-        //    using (var stream = new System.IO.MemoryStream())
-        //    {
-        //        bitmap.Compress(Bitmap.CompressFormat.Jpeg, 60, stream);
-        //        bitmapData = stream.ToArray();
-        //    }
-        //    return bitmapData;
-        //}
-        //public string GetRealPathFromURI(Android.Net.Uri contentUri)
-        //{
-        //    var mediaStoreImagesMediaData = "_data";
-        //    string[] projection = { mediaStoreImagesMediaData };
-        //    Android.Database.ICursor cursor = this.ManagedQuery(contentUri, projection,
-        //                                                        null, null, null);
-        //    int columnIndex = cursor.GetColumnIndexOrThrow(mediaStoreImagesMediaData);
-        //    cursor.MoveToFirst();
-        //    return cursor.GetString(columnIndex);
-        //}
         public bool CheckInternetConnection()
         {
 
-            string CheckUrl = "http://google.com";
+            string CheckUrl = "https://www.apple.com";
 
             try
             {
                 HttpWebRequest iNetRequest = (HttpWebRequest)WebRequest.Create(CheckUrl);
-
                 iNetRequest.Timeout = 5000;
-
                 WebResponse iNetResponse = iNetRequest.GetResponse();
-
-                //Console.WriteLine("...connection established..." + iNetRequest.ToString());
                 iNetResponse.Close();
-
                 return true;
 
             }
-            catch (WebException ex)
+            catch
             {
                 AlertDialog.Builder aler = new AlertDialog.Builder(this, Resource.Style.MyDialogTheme);
                 aler.SetTitle("Sorry");
@@ -385,80 +256,6 @@ namespace WineHangouts
                 return false;
             }
         }
-
-        //public async void DownloadAsync(object sender, System.EventArgs ea)
-        //{
-        //    try
-        //    {
-
-        //        webClient = new WebClient();
-        //        var url = new Uri("https://icsintegration.blob.core.windows.net/profileimages/" + Convert.ToInt32(CurrentUser.getUserId()) + ".jpg");
-        //        byte[] imageBytes = null;
-        //        try
-        //        {
-        //            imageBytes = await webClient.DownloadDataTaskAsync(url);
-
-
-        //        }
-        //        catch (TaskCanceledException)
-        //        {
-        //            //this.progressLayout.Visibility = ViewStates.Gone;
-        //            return;
-        //        }
-        //        catch (Exception exe)
-        //        {
-        //            LoggingClass.LogError(exe.Message, screenid, exe.StackTrace.ToString());
-        //        }
-        //        if (imageBytes != null)
-        //        {
-
-        //            try
-        //            {
-        //                string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-        //                string localFilename = CurrentUser.getUserId() + ".jpg";
-        //                string localPath = System.IO.Path.Combine(documentsPath, localFilename);
-
-        //                FileStream fs = new FileStream(localPath, FileMode.OpenOrCreate);
-        //                await fs.WriteAsync(imageBytes, 0, imageBytes.Length);
-        //                //Console.WriteLine("Saving image in local path: " + localPath);
-        //                fs.Close();
-        //                BitmapFactory.Options options = new BitmapFactory.Options()
-        //                {
-        //                    InJustDecodeBounds = true
-        //                };
-        //                Bitmap bit = await BitmapFactory.DecodeFileAsync(localPath, options);
-
-        //                Bitmap bitmap = await BitmapFactory.DecodeFileAsync(localPath);
-        //                if (bitmap != null)
-        //                {
-        //                    Bitmap pro = addWhiteBorder(bitmap, 10);
-        //                    propicimage.SetImageBitmap(pro);
-
-        //                }
-        //                else
-        //                {
-        //                    propicimage.SetImageResource(Resource.Drawable.ProfileEmpty);
-        //                }
-        //            }
-        //            catch (Exception exe)
-        //            {
-        //                LoggingClass.LogError(exe.Message, screenid, exe.StackTrace.ToString());
-        //            }
-        //            st.Stop();
-        //            LoggingClass.LogTime("Download aSync image profile", st.Elapsed.TotalSeconds.ToString());
-
-        //        }
-        //        else
-        //        {
-        //            propicimage.SetImageResource(Resource.Drawable.ProfileEmpty);
-        //        }
-        //    }
-        //    catch (Exception exe)
-        //    {
-        //        LoggingClass.LogError(exe.Message, screenid, exe.StackTrace.ToString());
-        //    }
-
-        //}
         Boolean isValidEmail(String email)
         {
             return Android.Util.Patterns.EmailAddress.Matcher(email).Matches();
@@ -482,10 +279,10 @@ namespace WineHangouts
         }
         public async override void OnBackPressed()
         {
-            var intent = new Intent(this, typeof(PotraitActivity));
-
-            StartActivity(intent);
-            MoveTaskToBack(true);
+            //var intent = new Intent(this, typeof(PotraitActivity));
+            Finish();
+            //StartActivity(intent);
+            //MoveTaskToBack(true);
             ProgressIndicator.Hide();
         }
 
@@ -515,36 +312,6 @@ namespace WineHangouts
 
             return path;
         }
-        //private void TakeAPicture()
-        //{
-
-        //    Intent intent = new Intent(MediaStore.ActionImageCapture);
-        //    App._file = new Java.IO.File(App._dir, String.Format(Convert.ToInt32(CurrentUser.getUserId()) + ".jpg", Guid.NewGuid()));
-        //    path += "/" + CurrentUser.getUserId() + ".jpg";
-        //    intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(App._file));
-        //    StartActivityForResult(intent, 0);
-
-
-        //}
-        //public Bitmap ResizeAndRotate(Bitmap image, int width, int height)
-        //{
-        //    var matrix = new Matrix();
-        //    var scaleWidth = ((float)width) / image.Width;
-        //    var scaleHeight = ((float)height) / image.Height;
-        //    matrix.PostRotate(90);
-        //    matrix.PreScale(scaleWidth, scaleHeight);
-        //    return Bitmap.CreateBitmap(image, 0, 0, image.Width, image.Height, matrix, true);
-        //}
-        //public Bitmap Resize(Bitmap image, int width, int height)
-        //{
-        //    var matrix = new Matrix();
-        //    var scaleWidth = ((float)width) / image.Width;
-        //    var scaleHeight = ((float)height) / image.Height;
-        //    matrix.PreScale(scaleWidth, scaleHeight);
-        //    GC.Collect();
-        //    return Bitmap.CreateBitmap(image, 0, 0, image.Width, image.Height, matrix, true);
-
-        //}
         protected override void OnPause()
         {
             base.OnPause();
@@ -557,78 +324,6 @@ namespace WineHangouts
             base.OnResume();
             LoggingClass.LogInfo("OnResume state in Profile activity", screenid);
         }
-        //private Bitmap addWhiteBorder(Bitmap bmp, int borderSize)
-        //{
-        //    Bitmap bmpWithBorder = Bitmap.CreateBitmap(bmp.Width + borderSize * 2, bmp.Height + borderSize * 2, bmp.GetConfig());
-        //    Canvas canvas = new Canvas(bmpWithBorder);
-        //    canvas.DrawColor(Color.Black);
-        //    canvas.DrawBitmap(bmp, borderSize, borderSize, null);
-        //    GC.Collect();
-        //    return bmpWithBorder;
-
-        //}
-        //private bool IsThereAnAppToTakePictures()
-        //{
-        //    Intent intent = new Intent(MediaStore.ActionImageCapture);
-        //    IList<ResolveInfo> availableActivities =
-        //        PackageManager.QueryIntentActivities(intent, PackageInfoFlags.MatchDefaultOnly);
-        //    return availableActivities != null && availableActivities.Count > 0;
-        //}
-        //public async void UploadProfilePicimagebutes(byte[] bitmapData)
-        //{
-
-        //    Microsoft.WindowsAzure.Storage.Auth.StorageCredentials sc = new StorageCredentials("icsintegration", "+7UyQSwTkIfrL1BvEbw5+GF2Pcqh3Fsmkyj/cEqvMbZlFJ5rBuUgPiRR2yTR75s2Xkw5Hh9scRbIrb68GRCIXA==");
-        //    CloudStorageAccount storageaccount = new CloudStorageAccount(sc, true);
-        //    CloudBlobClient blobClient = storageaccount.CreateCloudBlobClient();
-        //    CloudBlobContainer container = blobClient.GetContainerReference("profileimages");
-        //    await container.CreateIfNotExistsAsync();
-        //    CloudBlockBlob blob = container.GetBlockBlobReference(CurrentUser.getUserId() + ".jpg");
-        //    LoggingClass.LogInfo("Updated profile picture", screenid);
-        //    using (var fs = System.IO.File.Open(path, System.IO.FileMode.Open, System.IO.FileAccess.Read, System.IO.FileShare.None))
-        //    {
-        //        await blob.UploadFromStreamAsync(fs);
-        //        LoggingClass.LogInfo("Profile picture uploaded into blob", screenid);
-        //    }
-
-        //    await blob.UploadFromByteArrayAsync(bitmapData, 0, bitmapData.Length);
-        //    GC.Collect();
-
-        //    st.Stop();
-        //    LoggingClass.LogTime("Upload profile pic ", st.Elapsed.TotalSeconds.ToString());
-        //}
-
-        //private void Resize(Android.Net.Uri uri)
-        //{
-        //    Bitmap image = NGetBitmap(uri);
-        //    Bitmap pro = addWhiteBorder(image, 14);
-        //    Bitmap selectedimage = Resize(pro, 400, 400);
-        //    byte[] bitmapData1 = getBytesFromBitmap(selectedimage);
-        //    var TaskA = new System.Threading.Tasks.Task(() =>
-        //    {
-        //        UploadProfilePicimagebutes(bitmapData1);
-        //    });
-        //    TaskA.Start();
-
-
-        //}
-        //public void Resize1(string path)
-        //{
-        //    Bitmap propic = BitmapFactory.DecodeFile(path);
-
-        //    string dir_path = CreateDirectoryForPictures();
-        //    dir_path = dir_path + "/" + Convert.ToInt32(CurrentUser.getUserId()) + ".jpg";
-
-        //    Bitmap resized = Resize(propic, 350, 350);
-        //    var filePath = System.IO.Path.Combine(dir_path);
-        //    var stream = new FileStream(filePath, FileMode.Create);
-        //    resized.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
-        //    stream.Close();
-        //    UploadProfilePic(filePath);
-
-
-
-        //}
-
         public async void UploadProfilePic(string path)
         {
 
@@ -644,8 +339,6 @@ namespace WineHangouts
                 await blob.UploadFromStreamAsync(fs);
                 LoggingClass.LogInfo("Profile picture uploaded into blob", screenid);
             }
-            //st.Stop();
-            //LoggingClass.LogTime("Upload profile pic ", st.Elapsed.TotalSeconds.ToString());
         }
 
 

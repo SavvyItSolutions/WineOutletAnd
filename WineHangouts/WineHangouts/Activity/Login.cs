@@ -22,7 +22,7 @@ namespace WineHangouts
            
             SetContentView(Resource.Layout.Start);
 
-            var intent = new Intent(this, typeof(Activitylo));
+            var intent = new Intent(this, typeof(MyLocations));
             intent.AddFlags(ActivityFlags.ClearTop);
             var spec = TabHost.NewTabSpec("WhatsOn");
             var draw = Resources.GetDrawable(Resource.Drawable.ic_tab_whats_on);
@@ -30,7 +30,7 @@ namespace WineHangouts
             spec.SetContent(intent);
             TabHost.AddTab(spec);
 
-            intent = new Intent(this, typeof(Activity12));
+            intent = new Intent(this, typeof(MyHangouts));
             intent.AddFlags(ActivityFlags.ClearTop);
             spec = TabHost.NewTabSpec("Cart");
             draw = Resources.GetDrawable(Resource.Drawable.ic_tab_speakers);
