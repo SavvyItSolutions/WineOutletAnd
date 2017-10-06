@@ -156,5 +156,9 @@ namespace WineHangouts
             wineList.Adapter = adapter;
             adapter.NotifyDataSetChanged();
         }
+        public override void OnLowMemory()
+        {
+            GC.Collect();
+        }
     }
 }

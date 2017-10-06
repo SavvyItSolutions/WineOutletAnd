@@ -191,5 +191,9 @@ namespace WineHangouts
             var dp = (int)((pixelValue) / myContext.Resources.DisplayMetrics.Density);
             return dp;
         }
+        public void OnLowMemory()
+        {
+            GC.Collect();
+        }
     }
 }

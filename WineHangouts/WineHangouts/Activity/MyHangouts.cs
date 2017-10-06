@@ -160,5 +160,9 @@ namespace WineHangouts
             base.OnResume();
             //LoggingClass.LogInfo("OnResume state in Gridview activity" + StoreName, screenid);
         }
+        public override void OnLowMemory()
+        {
+            GC.Collect();
+        }
     }
 }

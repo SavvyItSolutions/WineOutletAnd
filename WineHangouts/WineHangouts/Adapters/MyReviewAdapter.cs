@@ -68,22 +68,16 @@ namespace WineHangouts
             {
                 if (row == null)
                     row = LayoutInflater.From(myContext).Inflate(Resource.Layout.MyReviewsCell, null, false);
-
-                //else
-                //    return convertView;
-
                 TextView txtName = row.FindViewById<TextView>(Resource.Id.textView64);
                 TextView txtYear = row.FindViewById<TextView>(Resource.Id.textView65);
                 TextView txtDescription = row.FindViewById<TextView>(Resource.Id.textView66);
                 TextView txtDate = row.FindViewById<TextView>(Resource.Id.textView67);
-                //TextView txtPrice = row.FindViewById<TextView>(Resource.Id.txtPrice);
                 ImageButton edit = row.FindViewById<ImageButton>(Resource.Id.imageButton3);
                 ImageButton delete = row.FindViewById<ImageButton>(Resource.Id.imageButton4);
                 ImageButton wineimage = row.FindViewById<ImageButton>(Resource.Id.imageButton2);
                 var metrics = myContext.Resources.DisplayMetrics;
                 var widthInDp = ConvertPixelsToDp(metrics.WidthPixels);
                 var heightInDp = ConvertPixelsToDp(metrics.HeightPixels);
-
 
                 RatingBar rb = row.FindViewById<RatingBar>(Resource.Id.rating);
                 ImageView heartImg = row.FindViewById<ImageView>(Resource.Id.imageButton44);
@@ -98,37 +92,6 @@ namespace WineHangouts
                 wineimage.Focusable = false;
                 wineimage.FocusableInTouchMode = false;
                 wineimage.Clickable = true;
-
-                //if (convertView == null)
-                //{ edit.Tag = position; }
-
-                //if (convertView == null)
-                //{
-                //    edit.Click += (sender, args) =>
-                //    {
-                //        int tempPosition = Convert.ToInt32(((ImageButton)sender).Tag);
-                //        string WineBarcode = myItems[tempPosition].Barcode;
-                //        Review _review = new Review();
-                //        _review.Barcode = WineBarcode;
-                //        _review.RatingStars = myItems[tempPosition].RatingStars;
-                //        _review.RatingText = myItems[tempPosition].RatingText;
-                //        _review.PlantFinal = myItems[tempPosition].PlantFinal;
-                //        LoggingClass.LogInfo("clicked on edit  an item---->" + WineBarcode + "----->" + _review.RatingStars + "---->" + _review.RatingText, screenid);
-                //        PerformItemClick(sender, args, _review);
-                //    };
-                //    //delete.Click += Delete_Click;
-                //    delete.Click += (sender, args) =>
-                //    {
-                //        string WineBarcode = myItems[position].Barcode;
-
-                //        Review _review = new Review();
-                //        _review.Barcode = WineBarcode;
-                //        LoggingClass.LogInfo("clicked on delete item--->" + WineBarcode, screenid);
-                //        PerformdeleteClick(sender, args, _review);
-
-                //    };
-                //}
-
                 wineimage.Click += (sender, args) => Console.WriteLine("ImageButton {0} clicked", position);
                 txtDate.SetTextSize(Android.Util.ComplexUnitType.Dip, 12);
                 txtName.Text = myItems[position].Name;
@@ -210,9 +173,7 @@ namespace WineHangouts
                             like.UserID = Convert.ToInt32(CurrentUser.getUserId());
                             like.SKU = Convert.ToInt32(myItems[actualPosition].SKU);
                             like.Liked = x;
-                            //myItems[actualPosition].IsLike = x;
                             like.BarCode = myItems[actualPosition].Barcode;
-                            //  LoggingClass.LogInfo("Liked an item", screenid);
                             ServiceWrapper sw = new ServiceWrapper();
                             await sw.InsertUpdateLike(like);
                         });
@@ -220,20 +181,7 @@ namespace WineHangouts
                         
                     };
                 }
-
-
                 Bitmap imageBitmap;
-                //if (System.IO.File.Exists(filePath))
-                //{
-                //    imageBitmap = BitmapFactory.DecodeFile(filePath);
-                //    wineimage.SetImageBitmap(imageBitmap);
-                //}
-                //else
-                //{
-                //    imageBitmap = BlobWrapper.Bottleimages(myItems[position].Barcode, Convert.ToInt32(myItems[position].PlantFinal));
-
-                //    wineimage.SetImageBitmap(imageBitmap);
-                //}
                 string url = myItems[position].SmallImageURL;
                 if (url == null)
                 {
@@ -250,10 +198,7 @@ namespace WineHangouts
                 txtYear.Focusable = false;
                 txtDescription.Focusable = false;
                 txtDate.Focusable = false;
-
             }
-
-
             LoggingClass.LogInfo("Entered into My Review Adapter", screenid);
             return row;
         }
@@ -274,6 +219,10 @@ namespace WineHangouts
         {
             var dp = (int)((pixelValue) / myContext.Resources.DisplayMetrics.Density);
             return dp;
+        }
+        public  void OnLowMemory()
+        {
+            GC.Collect();
         }
 
     }

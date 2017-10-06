@@ -70,5 +70,9 @@ namespace WineHangouts
         {
             base.OnResume();
         }
+        public override void OnLowMemory()
+        {
+            GC.Collect();
+        }
     }
 }

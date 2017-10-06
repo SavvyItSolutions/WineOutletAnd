@@ -67,6 +67,9 @@ namespace WineHangouts
             return row;
         }
 
-       
+        public  void OnLowMemory()
+        {
+            GC.Collect();
+        }
     }
 }

@@ -224,6 +224,11 @@ namespace WineHangouts
             LoggingClass.LogInfo("Clicked on options menu About", screenid);
             StartActivity(intent);
             GC.Collect();
+
+        }
+        public override void OnLowMemory()
+        {
+            GC.Collect();
         }
     }
     

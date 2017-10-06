@@ -178,7 +178,11 @@ namespace WineHangouts
 
             }
             return result;
-        }   
+        }
+        public void OnLowMemory()
+        {
+            GC.Collect();
+        }
     }
 
 }

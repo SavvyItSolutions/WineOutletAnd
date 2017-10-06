@@ -124,5 +124,9 @@ namespace WineHangouts
 			}
 			return base.OnOptionsItemSelected(item);
 		}
-	}
+        public override void OnLowMemory()
+        {
+            GC.Collect();
+        }
+    }
 }

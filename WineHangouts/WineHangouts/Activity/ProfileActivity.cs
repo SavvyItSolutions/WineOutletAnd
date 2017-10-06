@@ -341,8 +341,6 @@ namespace WineHangouts
             }
         }
 
-
-
     }
 
 }

@@ -483,6 +483,10 @@ namespace WineHangouts
           //  MoveTaskToBack(true);
             ProgressIndicator.Hide();
         }
+        public override void OnLowMemory()
+        {
+            GC.Collect();
+        }
 
     }
 }

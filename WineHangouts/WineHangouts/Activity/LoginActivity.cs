@@ -525,5 +525,9 @@ namespace WineHangouts
         {
             MoveTaskToBack(true);
         }
+        public override void OnLowMemory()
+        {
+            GC.Collect();
+        }
     }
 }
