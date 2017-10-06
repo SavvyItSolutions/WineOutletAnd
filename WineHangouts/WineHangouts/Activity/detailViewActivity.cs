@@ -46,21 +46,12 @@ namespace WineHangouts
 
         protected override void OnCreate(Bundle savedInstanceState)
 		{
-            //AndHUD.Shared.Dismiss();
+           
             CheckInternetConnection();
 			Stopwatch st = new Stopwatch();
 			st.Start();
 			base.OnCreate(savedInstanceState);
-           
             SetContentView(Resource.Layout.detailedView);
-   //         WineBarcode = Intent.GetStringExtra("WineBarcode");
-			//storeid = Intent.GetIntExtra("storeid", 1);
-			//ActionBar.SetHomeButtonEnabled(true);
-			//ActionBar.SetDisplayHomeAsUpEnabled(true);
-			//ServiceWrapper svc = new ServiceWrapper();
-   //         myData = new ItemDetailsResponse();
-			//ItemReviewResponse SkuRating = new ItemReviewResponse();
-			//this.Title = "Wine Details";
             commentsview = FindViewById<ListView>(Resource.Id.listView2);
 			WineName = FindViewById<TextView>(Resource.Id.txtWineName); //Assigning values to respected Textfields
 			WineName.Focusable = false;
@@ -98,7 +89,7 @@ namespace WineHangouts
             flag = 1;
             Internal_ViewDidLoad();
             st.Stop();
-            //AndHUD.Shared.Dismiss();
+            
             try
             {
                 ProgressIndicator.Hide();
@@ -194,28 +185,9 @@ namespace WineHangouts
                         WineDescription.Text = myData.ItemDetails.Description;
                     }
                     AvgRating.Rating = (float)myData.ItemDetails.AverageRating;
-
-                    //ReviewPopup editPopup = new ReviewPopup(this, edit);
-                    //RatingBar RatingInput = FindViewById<RatingBar>(Resource.Id.ratingInput);//Taking rating stars input
-                    //RatingInput.RatingBarChange += editPopup.CreatePopup;
-
-                    var metrics = Resources.DisplayMetrics;
+                     var metrics = Resources.DisplayMetrics;
                     var widthInDp = ConvertPixelsToDp(metrics.WidthPixels);
                     var heightInDp = ConvertPixelsToDp(metrics.HeightPixels);
-
-
-                    HighImageWine = FindViewById<ImageView>(Resource.Id.WineImage);
-
-                   // BitmapFactory.Options options = new BitmapFactory.Options
-                   // {
-                   //     InJustDecodeBounds = false,
-                   //     OutHeight = 75,
-                   //     OutWidth = 75
-
-                   // };
-                   //// ProgressIndicator.Hide();
-                   // LoggingClass.LogInfo("Entered into detail view" + WineBarcode, screenid);
-                   // Bitmap result = BitmapFactory.DecodeResource(Resources, Resource.Drawable.placeholder_re, options);
                 }
                 catch (Exception exe)
                 {
@@ -244,7 +216,7 @@ namespace WineHangouts
         public bool CheckInternetConnection()
 		{
 
-			string CheckUrl = "http://google.com";
+			string CheckUrl = "https://www.apple.com";
 
 			try
 			{
@@ -286,20 +258,7 @@ namespace WineHangouts
                 }
                 catch (Exception ex) { }
                 LoggingClass.LogInfo("Exited from Detail View", screenid);
-				//TokenModel devInfo = new TokenModel();
-				//var activityManager = (ActivityManager)this.GetSystemService(Context.ActivityService);
-
-				//ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
-				//activityManager.GetMemoryInfo(memInfo);
-
-				//System.Diagnostics.Debug.WriteLine("GetDeviceInfo - Avail {0} - {1} MB", memInfo.AvailMem, memInfo.AvailMem / 1024 / 1024);
-				//System.Diagnostics.Debug.WriteLine("GetDeviceInfo - Low {0}", memInfo.LowMemory);
-				//System.Diagnostics.Debug.WriteLine("GetDeviceInfo - Total {0} - {1} MB", memInfo.TotalMem, memInfo.TotalMem / 1024 / 1024);
-
-				//devInfo.AvailableMainMemory = memInfo.AvailMem;
-				//devInfo.IsLowMainMemory = memInfo.LowMemory;
-				//devInfo.TotalMainMemory = memInfo.TotalMem;
-				//ProgressIndicator.Hide();
+				
 				return false;
 			}
 			return base.OnOptionsItemSelected(item);
@@ -374,12 +333,6 @@ namespace WineHangouts
            int wineid = Intent.GetIntExtra("WineID", 138);
           myData = svc.GetItemDetails(WineBarcode, storeid).Result;
           AvgRating.Rating = (float)myData.ItemDetails.AverageRating;
-            //         var SkuRating = svc.GetItemReviewsByWineBarcode(WineBarcode).Result;
-            //comments = new reviewAdapter(this, SkuRating.Reviews.ToList());
-            //         commentsview.Adapter = comments;
-            //comments.NotifyDataSetChanged();
-
-
         }
 
 		public async void DownloadAsync(object sender, System.EventArgs ea, string WineBarcode)
@@ -406,15 +359,11 @@ namespace WineHangouts
 
 			catch (TaskCanceledException)
 			{
-				//this.progressLayout.Visibility = ViewStates.Gone;
 				return;
 			}
 			catch (Exception exe)
 			{
 				LoggingClass.LogError("while downloading image of wine id" + WineBarcode + "  " + exe.Message, screenid, exe.StackTrace.ToString());
-				//progressLayout.Visibility = ViewStates.Gone;
-				//downloadButton.Click += downloadAsync;
-				//downloadButton.Text = "Download Image";
 				Bitmap imgWine = BlobWrapper.Bottleimages(WineBarcode, storeid);
 				HighImageWine.SetImageBitmap(imgWine);
                 if (imgWine == null)
@@ -452,23 +401,19 @@ namespace WineHangouts
 				LoggingClass.LogError("While setting High resulution image" + exe.Message, screenid, exe.StackTrace.ToString());
 
 			}
-
-			//progressLayout.Visibility = ViewStates.Gone;
-			//downloadButton.Click += downloadAsync;
-			//downloadButton.Enabled = false;
 			HighImageWine.Dispose();
-			//downloadButton.Text = "Download Image";
+		
 		}
         protected override void OnPause()
         {
             base.OnPause();
-            //LoggingClass.LogInfo("OnPause state in Gridview activity"+StoreName, screenid);
+          
 
         }
         protected override void OnResume()
         {
             base.OnResume();
-            //LoggingClass.LogInfo("OnResume state in Gridview activity" + StoreName, screenid);
+           
         }
         public override void OnLowMemory()
         {

@@ -488,7 +488,7 @@ namespace WineHangouts
         } 
         public bool CheckInternetConnection()
         {
-            string CheckUrl = "http://google.com";
+            string CheckUrl = "https://www.apple.com";
             try
             {
                 HttpWebRequest iNetRequest = (HttpWebRequest)WebRequest.Create(CheckUrl);

@@ -227,7 +227,6 @@
     <AndroidResource Include="Resources\layout\FavEmp.axml" />
     <AndroidResource Include="Resources\layout\Fragment1Layout.axml" />
     <AndroidResource Include="Resources\layout\ListView.axml" />
-    <AndroidResource Include="Resources\layout\login.axml" />
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\layout\MyFavorite.axml" />
     <AndroidResource Include="Resources\layout\MyFavoriteGridView.axml" />
