@@ -109,7 +109,8 @@ namespace WineHangouts
 				storelist.Add("--Select your preferred store--");
 				storelist.Add("Wall");
 				storelist.Add("Point Pleasant");
-				storelist.Add("All");
+                    storelist.Add("Secaucus");
+                    storelist.Add("All");
                 List<string> StateList = new List<string>();
 				StateList.Add("AL");
 				StateList.Add("AK");

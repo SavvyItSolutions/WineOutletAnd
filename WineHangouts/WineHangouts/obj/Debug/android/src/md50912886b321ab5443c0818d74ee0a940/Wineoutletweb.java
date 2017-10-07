@@ -14,6 +14,7 @@ public class Wineoutletweb
 			"n_onKeyDown:(ILandroid/view/KeyEvent;)Z:GetOnKeyDown_ILandroid_view_KeyEvent_Handler\n" +
 			"n_onBackPressed:()V:GetOnBackPressedHandler\n" +
 			"n_onPause:()V:GetOnPauseHandler\n" +
+			"n_onOptionsItemSelected:(Landroid/view/MenuItem;)Z:GetOnOptionsItemSelected_Landroid_view_MenuItem_Handler\n" +
 			"n_onResume:()V:GetOnResumeHandler\n" +
 			"";
 		mono.android.Runtime.register ("WineHangouts.Wineoutletweb, WineHangouts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", Wineoutletweb.class, __md_methods);
@@ -58,6 +59,14 @@ public class Wineoutletweb
 	}
 
 	private native void n_onPause ();
+
+
+	public boolean onOptionsItemSelected (android.view.MenuItem p0)
+	{
+		return n_onOptionsItemSelected (p0);
+	}
+
+	private native boolean n_onOptionsItemSelected (android.view.MenuItem p0);
 
 
 	public void onResume ()

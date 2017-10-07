@@ -2,7 +2,7 @@
 <xs:schema xmlns:app="http://schemas.android.com/apk/res-auto" attributeFormDefault="qualified" targetNamespace="http://schemas.android.com/apk/res-auto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>v24</xs:documentation>
-    <xs:documentation>06-10-2017 05:20:03 PM</xs:documentation>
+    <xs:documentation>07-10-2017 02:45:11 PM</xs:documentation>
   </xs:annotation>
   <xs:attribute name="ahBarColor">
     <xs:annotation>
@@ -1648,6 +1648,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -2532,6 +2533,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -2989,6 +2991,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -3364,6 +3367,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -3736,6 +3740,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -4665,6 +4670,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -5155,6 +5161,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -5527,6 +5534,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -6032,6 +6040,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -6489,6 +6498,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -7197,6 +7207,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -7569,6 +7580,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -7941,6 +7953,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -8446,6 +8459,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -8890,6 +8904,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -9262,6 +9277,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -9819,6 +9835,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -10276,6 +10293,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -10821,6 +10839,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -11429,6 +11448,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -12594,6 +12614,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -13139,6 +13160,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />
@@ -13511,6 +13533,7 @@
             <xs:enumeration value="@drawable/browse1" />
             <xs:enumeration value="@drawable/browse2" />
             <xs:enumeration value="@drawable/buttonimg" />
+            <xs:enumeration value="@drawable/buy" />
             <xs:enumeration value="@drawable/card" />
             <xs:enumeration value="@drawable/card1" />
             <xs:enumeration value="@drawable/cell_shape" />

@@ -91,9 +91,25 @@ namespace WineHangouts
 				TextView AmountLeft = row.FindViewById<TextView>(Resource.Id.txtAmountLeft);
 				TextView txtPrice = row.FindViewById<TextView>(Resource.Id.txtPrice);
 				ImageView imgWine = row.FindViewById<ImageView>(Resource.Id.imgWine);
-				ImageView heartImg = row.FindViewById<ImageView>(Resource.Id.imgHeart);
+            ImageView buy = row.FindViewById<ImageView>(Resource.Id.imgHeart1);
+            buy.Click += delegate
+            {
+                ProgressIndicator.Show(myContext);
+                var intent = new Intent(myContext, typeof(Wineoutletweb));
+                string sku = myItems[position].SKU;
+                intent.PutExtra("sku", sku);
+                myContext.StartActivity(intent);
+            };
+            //buy.Click += delegate
+            //{
+            //    ProgressIndicator.Show(myContext);
+            //    var intent = new Intent(myContext, typeof(Wineoutletweb));
+            //    intent.PutExtra("WineBarcode", WineBarcode);
+            //    StartActivity(intent);
+            //};
+            ImageView heartImg = row.FindViewById<ImageView>(Resource.Id.imgHeart);
 				RatingBar rating = row.FindViewById<RatingBar>(Resource.Id.rtbProductRating);
-				rating.Rating = (float)myItems[position].AverageRating;
+                rating.Rating = (float)myItems[position].AverageRating;
 				txtName.Text = myItems[position].Name;
 				txtPrice.Text = myItems[position].SalePrice.ToString("C", Cultures.UnitedState);
 				AmountLeft.Text = "Wine left in bottle: " + myItems[position].AvailableVolume.ToString() + " ml";
@@ -187,11 +203,12 @@ namespace WineHangouts
                            
                         }
                     };
-               // }
+               
+                // }
             }
-            
 
-				Bitmap imageBitmap;
+
+            Bitmap imageBitmap;
             string url = myItems[position].SmallImageUrl;
             if (url == null)
             {
@@ -251,6 +268,9 @@ namespace WineHangouts
             return row;
 			
 		}
+
+        
+
         private int ConvertPixelsToDp(float pixelValue)
         {
             var dp = (int)((pixelValue) / myContext.Resources.DisplayMetrics.Density);

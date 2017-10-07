@@ -355,7 +355,6 @@ C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\D
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\favemp.xml
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\fragment1layout.xml
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\listview.xml
-C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\login.xml
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\main.xml
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\myfavorite.xml
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\myfavoritegridview.xml
@@ -461,5 +460,6 @@ C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\D
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\android\assets\WineHangouts.dll.mdb
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\reviewindetail.xml
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\layout\myreviews.xml
+C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\drawable\buy.png
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\WineHangouts.dll.mdb
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\bin\Debug\WineHangouts.dll.mdb

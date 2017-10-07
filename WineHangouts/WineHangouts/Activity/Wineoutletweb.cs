@@ -17,6 +17,7 @@ namespace WineHangouts
     public class Wineoutletweb : Activity
     {
         public WebView web_view;
+
         public class HelloWebViewClient : WebViewClient
         {
             public override bool ShouldOverrideUrlLoading(WebView view, string url)
@@ -27,16 +28,24 @@ namespace WineHangouts
         }
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            
-            this.Title = "Wine";
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.WineoutletWeb);
-
             web_view = FindViewById<WebView>(Resource.Id.webView1);
             web_view.Settings.JavaScriptEnabled = true;
             web_view.SetWebViewClient(new HelloWebViewClient());
-            web_view.LoadUrl("http://www.wineoutlet.com/");
-           
+            string sku = Intent.GetStringExtra("sku");
+            string url;
+            if (sku == null || sku == "")
+            {
+                web_view.LoadUrl("http://www.wineoutlet.com/");
+            }
+            else
+            {
+                url = "http://www.wineoutlet.com/sku" + sku + ".html";
+                web_view.LoadUrl(url);
+            }
+
+            ProgressIndicator.Hide();
             // Create your application here
         }
         public bool ShouldOverrideUrlLoading(WebView view, string url)
@@ -56,7 +65,7 @@ namespace WineHangouts
         public async override void OnBackPressed()
         {
             var intent = new Intent(this, typeof(Login));
-           
+
             StartActivity(intent);
             // MoveTaskToBack(true);
             ProgressIndicator.Hide();
@@ -64,14 +73,31 @@ namespace WineHangouts
         protected override void OnPause()
         {
             base.OnPause();
-    
+
 
         }
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            if (item.ItemId == Android.Resource.Id.Home)
+            {
 
+                base.OnBackPressed();
+
+                try
+                {
+                    ProgressIndicator.Hide();
+                }
+                catch (Exception ex) { }
+
+
+                return true;
+            }
+            return base.OnOptionsItemSelected(item);
+        }
         protected override void OnResume()
         {
             base.OnResume();
-          
+
         }
     }
 }

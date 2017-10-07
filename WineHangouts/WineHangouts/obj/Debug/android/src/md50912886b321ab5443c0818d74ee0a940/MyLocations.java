@@ -14,6 +14,7 @@ public class MyLocations
 			"n_onBackPressed:()V:GetOnBackPressedHandler\n" +
 			"n_onPause:()V:GetOnPauseHandler\n" +
 			"n_onResume:()V:GetOnResumeHandler\n" +
+			"n_onLowMemory:()V:GetOnLowMemoryHandler\n" +
 			"";
 		mono.android.Runtime.register ("WineHangouts.MyLocations, WineHangouts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", MyLocations.class, __md_methods);
 	}
@@ -57,6 +58,14 @@ public class MyLocations
 	}
 
 	private native void n_onResume ();
+
+
+	public void onLowMemory ()
+	{
+		n_onLowMemory ();
+	}
+
+	private native void n_onLowMemory ();
 
 	private java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)

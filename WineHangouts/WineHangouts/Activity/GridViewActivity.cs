@@ -126,19 +126,7 @@ namespace WineHangouts
                     StartActivity(intent);
                   
                 };
-				//TokenModel devInfo = new TokenModel();
-				//var activityManager = (ActivityManager)this.GetSystemService(Context.ActivityService);
-
-				//ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
-				//activityManager.GetMemoryInfo(memInfo);
-
-				//System.Diagnostics.Debug.WriteLine("GetDeviceInfo - Avail {0} - {1} MB", memInfo.AvailMem, memInfo.AvailMem / 1024 / 1024);
-				//System.Diagnostics.Debug.WriteLine("GetDeviceInfo - Low {0}", memInfo.LowMemory);
-				//System.Diagnostics.Debug.WriteLine("GetDeviceInfo - Total {0} - {1} MB", memInfo.TotalMem, memInfo.TotalMem / 1024 / 1024);
-
-				//devInfo.AvailableMainMemory = memInfo.AvailMem;
-				//devInfo.IsLowMainMemory = memInfo.LowMemory;
-				//devInfo.TotalMainMemory = memInfo.TotalMem;
+				
 			}
             catch(Exception exe)
             {

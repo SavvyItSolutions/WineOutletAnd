@@ -93,6 +93,10 @@ namespace WineHangouts
                 {
                     txtPrice.Text = "Tasted at :" + " Pt.Pleasant Beach";
                 }
+                else if (txtPrice.Text == "3")
+                {
+                    txtPrice.Text = "Tasted at :" + "Secaucus ";
+                }
                 //rb.Rating = (float)myItems[position].AverageRating;
                 //Bitmap imageBitmap = bvb.Bottleimages(myItems[position].WineId);
                 ProfilePicturePickDialog pppd = new ProfilePicturePickDialog();
