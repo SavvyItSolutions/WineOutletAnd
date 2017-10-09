@@ -2,14 +2,14 @@
 <Paths>
   <Jars></Jars>
   <ResolvedResourceDirectories>
-    <ResolvedResourceDirectory>C:\Users\Savvy IT\Desktop\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\AndHUD\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\Savvy IT\Desktop\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\FastAndroidCamera\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\Savvy IT\Desktop\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Refractored.Controls.CircleImageView\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\Savvy IT\Desktop\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Refractored.GifImageView\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\Savvy IT\Desktop\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\ZXingNetMobile\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\Savvy IT\Desktop\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Xamarin.GooglePlayServices.Basement\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\Savvy IT\Desktop\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Xamarin.GooglePlayServices.Base\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\Savvy IT\Desktop\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Xamarin.Android.Support.v7.RecyclerView\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\AndHUD\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\FastAndroidCamera\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Refractored.Controls.CircleImageView\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Refractored.GifImageView\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\ZXingNetMobile\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Xamarin.GooglePlayServices.Basement\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Xamarin.GooglePlayServices.Base\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Xamarin.Android.Support.v7.RecyclerView\library_project_imports\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
     <ResolvedAssetDirectory>obj\Release\__library_projects__\AndHUD\library_project_imports\assets</ResolvedAssetDirectory>
@@ -20,13 +20,13 @@
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
-    <ResolvedResourceDirectoryStamp>C:\Users\Savvy IT\Desktop\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\AndHUD.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\Savvy IT\Desktop\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\FastAndroidCamera.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\Savvy IT\Desktop\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Refractored.Controls.CircleImageView.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\Savvy IT\Desktop\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Refractored.GifImageView.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\Savvy IT\Desktop\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\ZXingNetMobile.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\Savvy IT\Desktop\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Xamarin.GooglePlayServices.Basement.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\Savvy IT\Desktop\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Xamarin.GooglePlayServices.Base.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\Savvy IT\Desktop\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Xamarin.Android.Support.v7.RecyclerView.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\AndHUD.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\FastAndroidCamera.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Refractored.Controls.CircleImageView.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Refractored.GifImageView.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\ZXingNetMobile.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Xamarin.GooglePlayServices.Basement.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Xamarin.GooglePlayServices.Base.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Release\__library_projects__\Xamarin.Android.Support.v7.RecyclerView.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
 </Paths>

@@ -17,7 +17,7 @@ namespace WineHangouts
     public class Wineoutletweb : Activity
     {
         public WebView web_view;
-
+        
         public class HelloWebViewClient : WebViewClient
         {
             public override bool ShouldOverrideUrlLoading(WebView view, string url)
@@ -28,22 +28,51 @@ namespace WineHangouts
         }
         protected override void OnCreate(Bundle savedInstanceState)
         {
+           
             base.OnCreate(savedInstanceState);
+         
+            
             SetContentView(Resource.Layout.WineoutletWeb);
             web_view = FindViewById<WebView>(Resource.Id.webView1);
             web_view.Settings.JavaScriptEnabled = true;
             web_view.SetWebViewClient(new HelloWebViewClient());
             string sku = Intent.GetStringExtra("sku");
+            string val = Intent.GetStringExtra("Val");
             string url;
-            if (sku == null || sku == "")
+            if (val == "1")
             {
-                web_view.LoadUrl("http://www.wineoutlet.com/");
+                if (sku == null || sku == "")
+                {
+                    ActionBar.SetIcon(Resource.Drawable.Icon);
+                    ActionBar.SetDisplayHomeAsUpEnabled(true);
+
+                    web_view.LoadUrl("http://www.wineoutlet.com/");
+                }
+                else
+                {
+                    ActionBar.SetIcon(Resource.Drawable.Icon);
+                    ActionBar.SetDisplayHomeAsUpEnabled(true);
+
+                    url = "http://www.wineoutlet.com/sku" + sku + ".html";
+                    web_view.LoadUrl(url);
+                }
             }
             else
-            {
-                url = "http://www.wineoutlet.com/sku" + sku + ".html";
-                web_view.LoadUrl(url);
-            }
+                web_view.LoadUrl("http://www.wineoutlet.com/");
+
+            //if (sku == null || sku == "")
+            //{
+
+            //    web_view.LoadUrl("http://www.wineoutlet.com/");
+            //}
+            //else
+            //{
+            //    ActionBar.SetIcon(Resource.Drawable.Icon);
+            //    ActionBar.SetDisplayHomeAsUpEnabled(true);
+
+            //    url = "http://www.wineoutlet.com/sku" + sku + ".html";
+            //    web_view.LoadUrl(url);
+            //}
 
             ProgressIndicator.Hide();
             // Create your application here
@@ -64,10 +93,10 @@ namespace WineHangouts
         }
         public async override void OnBackPressed()
         {
-            var intent = new Intent(this, typeof(Login));
+            //var intent = new Intent(this, typeof(Login));
 
-            StartActivity(intent);
-            // MoveTaskToBack(true);
+            //StartActivity(intent);
+            MoveTaskToBack(true);
             ProgressIndicator.Hide();
         }
         protected override void OnPause()
@@ -80,9 +109,12 @@ namespace WineHangouts
         {
             if (item.ItemId == Android.Resource.Id.Home)
             {
+                ProgressIndicator.Hide();
+               base.OnBackPressed();
+                // MoveTaskToBack(true);
+                //var intent = new Intent(this, typeof(Login));
 
-                base.OnBackPressed();
-
+                //StartActivity(intent);
                 try
                 {
                     ProgressIndicator.Hide();

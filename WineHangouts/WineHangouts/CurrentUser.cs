@@ -50,21 +50,17 @@ namespace WineHangouts
 			string StoreName = _pref.GetString("StoreName", null);
 			return StoreName;
 		}
-
-
 		public static void PutDeviceToken(string count)
         {
             _edit.PutString("token", count);
             _edit.Apply();
 
         }
-
         public static string getDeviceToken()
         {
             string countVal = _pref.GetString("token", null);
             return countVal;
         }
-
         public static string getUserName()
         {
             string value1 = _pref.GetString("UserName", null);
@@ -101,7 +97,6 @@ namespace WineHangouts
 			string DeviceID = _pref.GetString("DeviceID", null);
 			return DeviceID;
 		}
-       
         public static void SaveGuestId(string GuestId) {
             _edit.PutString("GuestId", GuestId);
             _edit.Apply();
@@ -120,6 +115,16 @@ namespace WineHangouts
         {
             string GuestId = _pref.GetString("InternalCustometID", null);
             return GuestId;
+        }
+        public static void SaveverifyResume(string OnResume)
+        {
+            _edit.PutString("OnResume", OnResume);
+            _edit.Apply();
+        }
+        public static string GetverifyResume()
+        {
+            string OnResume = _pref.GetString("OnResume", null);
+            return OnResume;
         }
     }
 

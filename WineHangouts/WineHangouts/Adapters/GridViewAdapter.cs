@@ -92,14 +92,7 @@ namespace WineHangouts
 				TextView txtPrice = row.FindViewById<TextView>(Resource.Id.txtPrice);
 				ImageView imgWine = row.FindViewById<ImageView>(Resource.Id.imgWine);
             ImageView buy = row.FindViewById<ImageView>(Resource.Id.imgHeart1);
-            buy.Click += delegate
-            {
-                ProgressIndicator.Show(myContext);
-                var intent = new Intent(myContext, typeof(Wineoutletweb));
-                string sku = myItems[position].SKU;
-                intent.PutExtra("sku", sku);
-                myContext.StartActivity(intent);
-            };
+          
             //buy.Click += delegate
             //{
             //    ProgressIndicator.Show(myContext);
@@ -144,8 +137,16 @@ namespace WineHangouts
 
             if (convertView == null)
             {
-               
-                    heartImg.Click += 
+                buy.Click += delegate
+                {
+                    ProgressIndicator.Show(myContext);
+                    var intent = new Intent(myContext, typeof(Wineoutletweb));
+                    string sku = myItems[position].SKU;
+                    intent.PutExtra("sku", sku);
+                    intent.PutExtra("Val", "1");
+                    myContext.StartActivity(intent);
+                };
+                heartImg.Click += 
                     delegate
                     {
                         if (CurrentUser.GetGuestId() != null|| CurrentUser.getUserId() == "0")

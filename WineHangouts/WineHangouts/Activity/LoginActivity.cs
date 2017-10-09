@@ -34,7 +34,6 @@ namespace WineHangouts
         public TextView TxtScanresult;
         public EditText txtmail;
         public TextView Txtem;
-
         ServiceWrapper svc = new ServiceWrapper();
         CustomerResponse AuthServ = new CustomerResponse();
         protected override void OnCreate(Bundle savedInstanceState)
@@ -43,7 +42,7 @@ namespace WineHangouts
             Stopwatch st = new Stopwatch();
             st.Start();
             //for direct login
-            //CurrentUser.SaveUserName("Mohana","48732");
+          // CurrentUser.SaveUserName("Mohana","48732");
             //Preinfo("8902519310330");
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.LoginView);
@@ -70,7 +69,7 @@ namespace WineHangouts
                 ImageButton BtnScanner = FindViewById<ImageButton>(Resource.Id.btnScanner);
                 Button BtnGuestLogin = FindViewById<Button>(Resource.Id.btnGuestLogin);
                 LoggingClass.LogInfo("Opened the app", screenid);
-                BtnScanner.Click +=  delegate
+                BtnScanner.Click += async delegate
                 {
                    
                     try
@@ -78,12 +77,12 @@ namespace WineHangouts
                         MobileBarcodeScanner.Initialize(Application);
                         var scanner = new ZXing.Mobile.MobileBarcodeScanner();
                         scanner.UseCustomOverlay = false;
-                        var result ="8902519310330";// "900497354894";//await scanner.Scan();
+                        var result = await scanner.Scan();// "8902519310330";// "900497354894";//await scanner.Scan();
                         if (result != null)
                         {
                             LoggingClass.LogInfo("User Tried to login with " + result, screenid);
-                            Preinfo(result);
-                            CurrentUser.SaveCardNumber(result);
+                            Preinfo(result.Text);
+                            CurrentUser.SaveCardNumber(result.Text);
                             txtmail.Visibility = ViewStates.Gone;
                             Txtem.Visibility = ViewStates.Gone;
                         }
@@ -147,6 +146,7 @@ namespace WineHangouts
         }
         public void IntoApp()
         {
+            CurrentUser.SaveverifyResume("Stop");
             int storename =  Convert.ToInt32(CurrentUser.GetPrefered());
             if (storename == 1)
             {
@@ -162,12 +162,20 @@ namespace WineHangouts
                 ProgressIndicator.Show(this);
                 StartActivity(intent);
             }
+            else if (storename == 3)
+            {
+                Intent intent = new Intent(this, typeof(GridViewActivity));
+                intent.PutExtra("MyData", AppConstants.SecaucusStore);
+                ProgressIndicator.Show(this);
+                StartActivity(intent);
+            }
             else
             {
                 Intent intent = new Intent(this, typeof(Login));
                 ProgressIndicator.Show(this);
                 StartActivity(intent);
             }
+            
         }
         public async void Preinfo(string CardNumber)
         {
@@ -411,7 +419,15 @@ namespace WineHangouts
                                 ProgressIndicator.Show(this);
                                 StartActivity(intent);
                             }
-                            else
+                        else if (storename == 3)
+                        {
+                            Intent intent = new Intent(this, typeof(GridViewActivity));
+                            intent.PutExtra("MyData",AppConstants.SecaucusStore);
+
+                            ProgressIndicator.Show(this);
+                            StartActivity(intent);
+                        }
+                        else
                             {
                                 Intent intent = new Intent(this, typeof(Login));
                                 ProgressIndicator.Show(this);
@@ -516,10 +532,16 @@ namespace WineHangouts
         }
         protected override void OnResume()
         {
-            EmailVerification(false);
-            base.OnResume();
-
-
+            if (CurrentUser.GetverifyResume() == "Stop")
+            {
+                base.OnResume();
+            }
+            else
+            {
+                EmailVerification(false);
+                base.OnResume();
+            }
+            
         }
         public  override void OnBackPressed()
         {

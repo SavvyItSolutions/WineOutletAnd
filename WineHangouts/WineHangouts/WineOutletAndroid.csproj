@@ -63,7 +63,7 @@
     </Reference>
     <Reference Include="Hangouts.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Services\Hangout\bin\Hangouts.Models.dll</HintPath>
+      <HintPath>..\..\..\Services\Hangout\bin\Hangouts.Models.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Edm, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -225,7 +225,6 @@
     <AndroidResource Include="Resources\layout\detailedView.axml" />
     <AndroidResource Include="Resources\layout\EditReviewPopup.axml" />
     <AndroidResource Include="Resources\layout\FavEmp.axml" />
-    <AndroidResource Include="Resources\layout\Fragment1Layout.axml" />
     <AndroidResource Include="Resources\layout\ListView.axml" />
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\layout\MyFavorite.axml" />

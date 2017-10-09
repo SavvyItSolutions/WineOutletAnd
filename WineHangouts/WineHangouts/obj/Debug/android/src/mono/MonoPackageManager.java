@@ -101,6 +101,7 @@ class MonoPackageManager_Resources {
 		"WineHangouts.dll",
 		"AndHUD.dll",
 		"FastAndroidCamera.dll",
+		"Hangouts.Models.dll",
 		"Microsoft.Data.Edm.dll",
 		"Microsoft.Data.OData.dll",
 		"Microsoft.Data.Services.Client.dll",
@@ -128,7 +129,6 @@ class MonoPackageManager_Resources {
 		"Xamarin.Android.Support.Fragment.dll",
 		"Xamarin.Android.Support.v4.dll",
 		"Xamarin.Android.Support.v7.RecyclerView.dll",
-		"Hangouts.Models.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

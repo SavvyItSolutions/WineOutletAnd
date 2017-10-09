@@ -34,79 +34,50 @@ namespace WineHangouts
         }
 		public static async void UploadErrorLogs()
 		{
+            var TaskA = new System.Threading.Tasks.Task(async () =>
+            {
             pathcre();
-			try
-			{
+            try
+            {
 
-				sc = new StorageCredentials("icsintegration", "+7UyQSwTkIfrL1BvEbw5+GF2Pcqh3Fsmkyj/cEqvMbZlFJ5rBuUgPiRR2yTR75s2Xkw5Hh9scRbIrb68GRCIXA==");
-				storageaccount = new CloudStorageAccount(sc, true);
-				blobClient = storageaccount.CreateCloudBlobClient();
-				container = blobClient.GetContainerReference("userlogs");
+                sc = new StorageCredentials("icsintegration", "+7UyQSwTkIfrL1BvEbw5+GF2Pcqh3Fsmkyj/cEqvMbZlFJ5rBuUgPiRR2yTR75s2Xkw5Hh9scRbIrb68GRCIXA==");
+                storageaccount = new CloudStorageAccount(sc, true);
+                blobClient = storageaccount.CreateCloudBlobClient();
+                container = blobClient.GetContainerReference("userlogs");
+                await container.CreateIfNotExistsAsync(); //{
+                append = container.GetAppendBlobReference(userid + ".csv"); //}
+                if (!await append.ExistsAsync())
+                {
+                    await append.CreateOrReplaceAsync();
+                }
+            
 
-				//var csv = new StringBuilder();
-				//var newLine = string.Format("Exception", DateTime.Now, "Test", "Test", "Test");
-				//csv.AppendLine(newLine);
-				//File.AppendAllText(logspath, csv.ToString());
-
-				await container.CreateIfNotExistsAsync();
-				//CloudBlockBlob blob = container.GetBlockBlobReference(CurrentUser.getUserId() + ".csv"); //(path);
-				//if (CurrentUser.getUserId() == null)
-				//{
-					append = container.GetAppendBlobReference(userid+".csv");
-				//}
-				//else
-				//{
-				//	append = container.GetAppendBlobReference(CurrentUser.getUserId() + ".csv");
-				//}
-				if (!await append.ExistsAsync())
-				{
-					await append.CreateOrReplaceAsync();
-				}
-                
-		
-			}
+            }
 			catch (Exception exe)
 			{
 				Log.Error("Error", exe.Message);
 			}
-			
-		}
-		//public static string CreateDirectoryForLogs()
-  //      {
-  //          try
-  //          {
-  //              App._dir = new Java.IO.File(Android.OS.Environment.GetExternalStoragePublicDirectory("WineHangouts"), "winehangouts/logs");
-
-  //              if (!App._dir.Exists())
-  //              {
-  //                  App._dir.Mkdirs();
-  //              }
-  //              logspath = App._dir.ToString() + "/" + CurrentUser.getUserId() + ".csv";
-  //          }
-  //          catch (Exception exe)
-  //          {
-  //              Log.Error("Error", exe.Message);
-  //          }
-  //          return logspath;
-  //      }
+            });
+            TaskA.Start();
+        }
         public static void LogInfo(string info,int screenid)
 		{
             var TaskA = new System.Threading.Tasks.Task(() =>
             {
                 pathcre();
-            try
-			{
+                try
+			    {
 				
-				append = container.GetAppendBlobReference(userid + ".csv");
-				DateTime date1 = DateTime.UtcNow;
+				    append = container.GetAppendBlobReference(userid + ".csv");
+				    DateTime date1 = DateTime.UtcNow;
 			
-			append.AppendTextAsync(string.Format("{0},{1},{2},{3}", "Info", date1.ToString("MM/dd/yyyy hh:mm:ss.fff"), info, screenid + "\n"));
+			        append.AppendTextAsync(string.Format("{0},{1},{2},{3}", "Info", date1.ToString("MM/dd/yyyy hh:mm:ss.fff"), info, screenid + "\n"));
 
-			}
-			catch (Exception exe)
-			{
-				Log.Error("Error", exe.Message);
-			}
+			    }
+			    catch (Exception exe)
+			    {
+			    	Log.Error("Error", exe.Message);
+			    }
             });
             TaskA.Start();
         }
@@ -122,9 +93,7 @@ namespace WineHangouts
 				append = container.GetAppendBlobReference(userid + ".csv");
 				var tasks = new Task[1];
 				for (int i = 0; i < 1; i++)
-
-
-					tasks[i] =  append.AppendTextAsync(string.Format("{0},{1},{2},{3}", "Info", date.ToString("MM/dd/yyyy hh:mm:ss.fff"), info,screenid + "\n"));
+				tasks[i] =  append.AppendTextAsync(string.Format("{0},{1},{2},{3}", "Info", date.ToString("MM/dd/yyyy hh:mm:ss.fff"), info,screenid + "\n"));
 				Task.WaitAll(tasks);
 
 			}
@@ -151,12 +120,7 @@ namespace WineHangouts
 
 					tasks[i]= append.AppendTextAsync(string.Format("{0},{1},{2},{3}", "Service", date1.ToString("MM/dd/yyyy hh:mm:ss.fff"), info, servicename +"\n"));
 				Task.WaitAll(tasks);
-				//var csv = new StringBuilder();
-				//            var newLine = string.Format("{0},{1},{2},{3}", "Service", DateTime.Now, info, servicename);
-				//            csv.AppendLine(newLine);
-				//            File.AppendAllText(logspath, csv.ToString());
-				//await append.AppendTextAsync(string.Format("{0},{1},{2},{3},{4}", "Exception", DateTime.Now, lineno, screenid + "\n"));
-			}
+                }
             catch (Exception exe)
             {
                 Log.Error("Error", exe.Message);
@@ -174,11 +138,6 @@ namespace WineHangouts
 				append = container.GetAppendBlobReference(userid+ ".csv");
 				DateTime date2 = DateTime.UtcNow;
 				append.AppendTextAsync(string.Format("{0},{1},{2},{3},{4}", "Exception", date2.ToString("MM/dd/yyyy hh:mm:ss.fff"), error, lineno, screenid + "\n"));
-				//var csv = new StringBuilder();
-				//var newLine = string.Format("{0},{1},{2},{3},{4}", "Exception", DateTime.Now, error,lineno,screenid);
-				//csv.AppendLine(newLine);
-				//File.AppendAllText(logspath, csv.ToString());
-				
 			}
             catch (Exception exe)
             {
@@ -197,17 +156,12 @@ namespace WineHangouts
 				append = container.GetAppendBlobReference(CurrentUser.getUserId() + ".csv");
 				DateTime date2 = DateTime.UtcNow;
 				append.AppendTextAsync(string.Format("{0},{1},{2},{3}", "Time", date2.ToString("MM/dd/yyyy hh:mm:ss.fff"), info, time+ "\n"));
-				//var csv = new StringBuilder();
-				//var newLine = string.Format("{0},{1},{2},{3},{4}", "Exception", DateTime.Now, error,lineno,screenid);
-				//csv.AppendLine(newLine);
-				//File.AppendAllText(logspath, csv.ToString());
-
 			}
 			catch (Exception exe)
 			{
 				Log.Error("Error", exe.Message);
 			}
-        });
+            });
             TaskA.Start();
 		}
 	}
