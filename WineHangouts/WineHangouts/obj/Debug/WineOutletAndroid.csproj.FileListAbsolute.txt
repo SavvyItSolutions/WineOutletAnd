@@ -447,5 +447,6 @@ C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\bin\D
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\bin\Debug\Hangouts.Models.dll.mdb
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\bin\Debug\WineHangouts.dll.mdb
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\android\assets\Hangouts.Models.dll.mdb
+C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\res\drawable\header.png
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\obj\Debug\WineHangouts.dll.mdb
 C:\Users\Savvy IT\Documents\GitHub\WineOutletAnd\WineHangouts\WineHangouts\bin\Debug\WineHangouts.dll.mdb

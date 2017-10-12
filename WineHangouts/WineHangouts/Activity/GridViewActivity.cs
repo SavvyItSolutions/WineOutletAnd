@@ -43,7 +43,8 @@ namespace WineHangouts
                     StoreName = Intent.GetStringExtra("MyData");
                 this.Title = StoreName;
                 this.ActionBar.SetHomeButtonEnabled(true);
-                this.ActionBar.SetDisplayShowTitleEnabled(true);//  ToolbartItems.Add(new ToolbarItem { Text = "BTN 1", Icon = "myicon.png" });
+                this.ActionBar.SetDisplayShowTitleEnabled(true);
+               //  ToolbartItems.Add(new ToolbarItem { Text = "BTN 1", Icon = "myicon.png" });
                 BindGridData();
                 SwipeRefreshLayout mSwipeRefreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.PullDownRefresh);
                 mSwipeRefreshLayout.Refresh  += async delegate {

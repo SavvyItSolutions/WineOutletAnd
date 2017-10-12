@@ -277,9 +277,18 @@ namespace WineHangouts
         {
             if (item.ItemId == Android.Resource.Id.Home)
             {
-                AndHUD.Shared.Dismiss();
-                base.OnBackPressed();
-                GC.Collect();
+                string Back= Intent.GetStringExtra("Back");
+                if (Back == "Back")
+                {
+                    var intent = new Intent(this, typeof(Login));
+                    StartActivity(intent);
+                }
+                else
+                {
+                    AndHUD.Shared.Dismiss();
+                    base.OnBackPressed();
+                    GC.Collect();
+                }
                 AndHUD.Shared.Dismiss();
                 try
                 {
@@ -287,27 +296,23 @@ namespace WineHangouts
                 }
                 catch (Exception ex) { }
                 LoggingClass.LogInfo("Exited from Detail View", screenid);
-                //TokenModel devInfo = new TokenModel();
-                //var activityManager = (ActivityManager)this.GetSystemService(Context.ActivityService);
-
-                //ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
-                //activityManager.GetMemoryInfo(memInfo);
-
-                //System.Diagnostics.Debug.WriteLine("GetDeviceInfo - Avail {0} - {1} MB", memInfo.AvailMem, memInfo.AvailMem / 1024 / 1024);
-                //System.Diagnostics.Debug.WriteLine("GetDeviceInfo - Low {0}", memInfo.LowMemory);
-                //System.Diagnostics.Debug.WriteLine("GetDeviceInfo - Total {0} - {1} MB", memInfo.TotalMem, memInfo.TotalMem / 1024 / 1024);
-
-                //devInfo.AvailableMainMemory = memInfo.AvailMem;
-                //devInfo.IsLowMainMemory = memInfo.LowMemory;
-                //devInfo.TotalMainMemory = memInfo.TotalMem;
-                //ProgressIndicator.Hide();
+                
                 return false;
             }
             return base.OnOptionsItemSelected(item);
         }
         public async override void OnBackPressed()
         {
-            Finish();
+            string Back = Intent.GetStringExtra("Back");
+            if (Back == "Back")
+            {
+                var intent = new Intent(this, typeof(Login));
+                StartActivity(intent);
+            }
+            else
+            {
+                Finish();
+            }
             // MoveTaskToBack(true);
             GC.Collect();
         }

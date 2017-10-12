@@ -126,6 +126,16 @@ namespace WineHangouts
             string OnResume = _pref.GetString("OnResume", null);
             return OnResume;
         }
+        public static void SaveNotificationOnBack(string Back)
+        {
+            _edit.PutString("Back", Back);
+            _edit.Apply();
+        }
+        public static string GetNotificationOnBack()
+        {
+            string Back = _pref.GetString("Back", null);
+            return Back;
+        }
     }
 
     public class ProgressIndicator

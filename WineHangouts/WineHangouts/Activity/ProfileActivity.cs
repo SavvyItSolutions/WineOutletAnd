@@ -182,6 +182,8 @@ namespace WineHangouts
                         {
                             AndHUD.Shared.ShowErrorWithStatus(this, "Zipcode is invalid", MaskType.Clear, TimeSpan.FromSeconds(2));
                         }
+                        else if((Mobilenumber.Text=="")||(Mobilenumber.Text.Length!=10))
+                        { AndHUD.Shared.ShowErrorWithStatus(this, "Enter valid mobile number", MaskType.Clear, TimeSpan.FromSeconds(2)); }
                         else
                         {
                             AndHUD.Shared.Show(this, "Please Wait...", Convert.ToInt32(MaskType.Clear));

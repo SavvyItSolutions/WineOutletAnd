@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.savvyitsol.wineoulet" android:versionName="1" android:installLocation="internalOnly" android:versionCode="16">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.savvyitsol.wineoulet" android:versionName="1" android:installLocation="internalOnly" android:versionCode="17">
   <!--suppress UsesMinSdkAttributes-->
   <uses-sdk android:minSdkVersion="16" />
   <uses-permission android:name="android.permission.INTERNET" />
@@ -38,7 +38,7 @@
     <activity android:label="Edit Profile" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.ProfileActivity" />
     <activity android:label="@string/ApplicationName" android:screenOrientation="portrait" android:theme="@android:style/Theme.Dialog" android:name="md50912886b321ab5443c0818d74ee0a940.ProfilePicturePickDialog" />
     <activity android:icon="@drawable/logo5" android:label="Wine Details" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.DetailViewActivity" />
-    <activity android:icon="@drawable/icon" android:label="@string/ApplicationName" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.LoginActivity" />
+    <activity android:icon="@drawable/icon" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.LoginActivity" />
     <activity android:label="Available Wines" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.GridViewActivity" />
     <activity android:label="My Reviews" android:screenOrientation="portrait" android:name="md50912886b321ab5443c0818d74ee0a940.MyReviewActivity" />
     <activity android:label="Wineoutletweb" android:name="md50912886b321ab5443c0818d74ee0a940.Wineoutletweb" />

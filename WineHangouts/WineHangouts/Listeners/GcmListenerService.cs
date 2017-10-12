@@ -16,6 +16,7 @@ namespace WineHangouts
         {
             // Extract the message received from GCM:
             var message = data.GetString("message");
+            
             string WineBarcode = data.GetString("barcode");
             Log.Debug("MyGcmListenerService", "From:    " + from);
             Log.Debug("MyGcmListenerService", "Message: " + message);
@@ -28,11 +29,27 @@ namespace WineHangouts
         // Use Notification Builder to create and launch the notification:
         void SendNotification(string message, string WineBarcode)
         {
+
             try { 
             Stopwatch st1=new Stopwatch();
-            var intent = new Intent(this, typeof(DetailViewActivity));
-            intent.PutExtra("WineBarcode", WineBarcode);
-            intent.AddFlags(ActivityFlags.ClearTop);
+                Intent intent;
+                if (WineBarcode == "-1")
+                {
+                     intent = new Intent(this, typeof(Login));
+                    intent.AddFlags(ActivityFlags.ClearTop);
+                    intent.AddFlags(ActivityFlags.ClearTask);
+                    intent.AddFlags(ActivityFlags.NewTask);
+                }
+                else
+                {
+                     intent = new Intent(this, typeof(DetailViewActivity));
+                    intent.PutExtra("WineBarcode", WineBarcode);
+                    string Back = "Back";
+                    intent.PutExtra("Back", Back);
+                    intent.AddFlags(ActivityFlags.ClearTop);
+                    intent.AddFlags(ActivityFlags.ClearTask);
+                    intent.AddFlags(ActivityFlags.NewTask);
+                }
             //System.TimeSpan ts = new System.TimeSpan((System.Int64)10e12+3456789);
             st1.Start();
             int requestid = st1.Elapsed.Milliseconds;
@@ -45,12 +62,12 @@ namespace WineHangouts
                 .SetContentText(message)
                 .SetAutoCancel(false)
                 .SetContentIntent(pendingIntent);
-            notificationBuilder.SetAutoCancel(true);
+                 notificationBuilder.SetAutoCancel(true);
                 //int notificationId = new Random().NextInt();
                 // System.TimeSpan ts = new System.TimeSpan((System.Int64)10e12 + 3456789);
                 LoggingClass.LogInfo("Notification Sent" + WineBarcode, 1);
                 int notificationId = new Random().NextInt();
-            var notificationManager = (NotificationManager)GetSystemService(Context.NotificationService);
+                var notificationManager = (NotificationManager)GetSystemService(Context.NotificationService);
             notificationManager.Notify(notificationId, notificationBuilder.Build());
             }catch(System.Exception ex) {
                 LoggingClass.LogError(ex.Message, 1, ex.StackTrace);

@@ -183,7 +183,7 @@ namespace WineHangouts
                 }
                 Bitmap imageBitmap;
                 string url = myItems[position].SmallImageURL;
-                if (url == null)
+                if (url == null || url == "")
                 {
                     url = myItems[position].Barcode + ".jpg";
                 }

@@ -121,7 +121,7 @@ namespace WineHangouts
         }
         public async override void OnBackPressed()
         {
-
+            Finish();
             MoveTaskToBack(true);
             ProgressIndicator.Hide();
         }

@@ -1698,109 +1698,112 @@ namespace WineHangouts
 			public const int FavIns = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int heart_empty = 2130837608;
+			public const int Header = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int heart_full = 2130837609;
+			public const int heart_empty = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int ic_action_person = 2130837610;
+			public const int heart_full = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int ic_errorstatus = 2130837611;
+			public const int ic_action_person = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int ic_successstatus = 2130837612;
+			public const int ic_errorstatus = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int ic_tab_sessions = 2130837613;
+			public const int ic_successstatus = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int ic_tab_speakers = 2130837614;
+			public const int ic_tab_sessions = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int ic_tab_whats_on = 2130837615;
+			public const int ic_tab_speakers = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int Icon = 2130837616;
+			public const int ic_tab_whats_on = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int Loading = 2130837617;
+			public const int Icon = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int locations = 2130837618;
+			public const int Loading = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int locations1 = 2130837619;
+			public const int locations = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int logo5 = 2130837620;
+			public const int locations1 = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int mf = 2130837621;
+			public const int logo5 = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int mr = 2130837622;
+			public const int mf = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int ms = 2130837623;
+			public const int mr = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int mt = 2130837624;
+			public const int ms = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int myhangouts = 2130837625;
+			public const int mt = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int myhangouts1 = 2130837626;
-			
-			// aapt resource value: 0x7f02008a
-			public const int notification_template_icon_bg = 2130837642;
+			public const int myhangouts = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int options_menu = 2130837627;
+			public const int myhangouts1 = 2130837627;
+			
+			// aapt resource value: 0x7f02008b
+			public const int notification_template_icon_bg = 2130837643;
 			
 			// aapt resource value: 0x7f02007c
-			public const int options_menu_1 = 2130837628;
+			public const int options_menu = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int pp1 = 2130837629;
+			public const int options_menu_1 = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int proback = 2130837630;
+			public const int pp1 = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int ProfileEmpty = 2130837631;
+			public const int proback = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int ReviewIns = 2130837632;
+			public const int ProfileEmpty = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int rounded_corner = 2130837633;
+			public const int ReviewIns = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int roundedbg = 2130837634;
+			public const int rounded_corner = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int roundedbgdark = 2130837635;
+			public const int roundedbg = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int scacus1 = 2130837636;
+			public const int roundedbgdark = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int splash = 2130837637;
+			public const int scacus1 = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int Tes = 2130837638;
+			public const int splash = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int test = 2130837639;
+			public const int Tes = 2130837639;
 			
 			// aapt resource value: 0x7f020088
-			public const int user1 = 2130837640;
+			public const int test = 2130837640;
 			
 			// aapt resource value: 0x7f020089
-			public const int wall1 = 2130837641;
+			public const int user1 = 2130837641;
+			
+			// aapt resource value: 0x7f02008a
+			public const int wall1 = 2130837642;
 			
 			static Drawable()
 			{

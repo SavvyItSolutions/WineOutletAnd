@@ -20,7 +20,7 @@ namespace WineHangouts
 
 {
 
-    [Activity(Label = "@string/ApplicationName", MainLauncher = false, Icon = "@drawable/Icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity( MainLauncher = false, Icon = "@drawable/Icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class LoginActivity : Activity
     {
         public string otp = "";
@@ -42,7 +42,7 @@ namespace WineHangouts
             Stopwatch st = new Stopwatch();
             st.Start();
             //for direct login
-          // CurrentUser.SaveUserName("Mohana","48732");
+            //CurrentUser.SaveUserName("Sumanth","3");
             //Preinfo("8902519310330");
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.LoginView);
@@ -77,12 +77,12 @@ namespace WineHangouts
                         MobileBarcodeScanner.Initialize(Application);
                         var scanner = new ZXing.Mobile.MobileBarcodeScanner();
                         scanner.UseCustomOverlay = false;
-                        var result = await scanner.Scan();// "8902519310330";// "900497354894";//await scanner.Scan();
+                        var result =  "8902519310330";// "900497354894";//await scanner.Scan();
                         if (result != null)
                         {
                             LoggingClass.LogInfo("User Tried to login with " + result, screenid);
-                            Preinfo(result.Text);
-                            CurrentUser.SaveCardNumber(result.Text);
+                            Preinfo(result);
+                            CurrentUser.SaveCardNumber(result);
                             txtmail.Visibility = ViewStates.Gone;
                             Txtem.Visibility = ViewStates.Gone;
                         }

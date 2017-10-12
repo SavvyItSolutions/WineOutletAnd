@@ -93,10 +93,7 @@ namespace WineHangouts
         }
         public async override void OnBackPressed()
         {
-            //var intent = new Intent(this, typeof(Login));
-
-            //StartActivity(intent);
-            MoveTaskToBack(true);
+           
             ProgressIndicator.Hide();
         }
         protected override void OnPause()
