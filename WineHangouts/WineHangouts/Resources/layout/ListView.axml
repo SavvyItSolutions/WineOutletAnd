@@ -45,14 +45,14 @@
                     android:layout_width="26dp"
                     android:layout_height="26dp"
                     android:id="@+id/imgHeart1"
-                    android:background="@drawable/buy"
                     android:scaleType="fitXY"
                     android:layout_margin="3dp"
                     android:layout_marginRight="5dp"
                     android:layout_alignEnd="@id/imageView1"
                     android:scaleX="1"
                     android:scaleY="1"
-                    android:layout_below="@+id/imgHeart" />
+                    android:layout_below="@+id/imgHeart"
+                    android:background="@drawable/buy" />
             </RelativeLayout>
         </TableRow>
     </TableLayout>

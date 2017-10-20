@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" >
   <!--///showAsAction="always" ///-->
-  <!--<item android:id="@+id/action_settings" android:icon="@drawable/taste" android:title="Profile" showAsAction="always" />
-  <item android:id="@+id/action_settings1" android:title="About Us" showAsAction="always" />
-  <item android:id="@+id/action_settings2" android:icon="@drawable/taste" android:title="Exit" showAsAction="always" />-->
+  <!--<item android:id="@+id/action_settings"  android:title="Profile" showAsAction="always" android:itemBackground ="#800080" />
+  <item android:id="@+id/action_settings1" android:title="About Us" showAsAction="always" android:itemBackground ="#800080"/>
+  <item android:id="@+id/action_settings2"  android:title="Exit" showAsAction="always" android:itemBackground ="#800080" />-->
   <!--/android:showAsAction="ifRoom"/-->
-  <item android:id="@+id/action_settings3" android:title="items"   android:showAsAction="ifRoom" />
-  <item android:id="@+id/action_settings4" android:title="items"  android:showAsAction="ifRoom" />
+  <item android:id="@+id/action_settings3" android:icon="@drawable/carticon" android:showAsAction="ifRoom" />
 </menu>
 
  

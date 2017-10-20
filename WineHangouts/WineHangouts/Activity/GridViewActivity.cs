@@ -187,7 +187,12 @@ namespace WineHangouts
 				return false;
 			}
 		}
-		private void MSwipeRefreshLayout_Refresh(object sender, EventArgs e)
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Drawable.options_menu_1,menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+        private void MSwipeRefreshLayout_Refresh(object sender, EventArgs e)
         {
             BindGridData();
             SwipeRefreshLayout mSwipeRefreshLayout = FindViewById<SwipeRefreshLayout>(Resource.Id.PullDownRefresh);
@@ -196,19 +201,37 @@ namespace WineHangouts
         }
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
+            Intent intent = null;
+
+            switch (item.ItemId)
+            {
+
+                case Resource.Id.action_settings3:
+                    ProgressIndicator.Show(this);
+                    intent = new Intent(this, typeof(AboutActivity));
+                    break;
+             
+                  
+            }
+            if (intent != null)
+            {
+                StartActivity(intent);
+            }
             if (item.ItemId == Android.Resource.Id.Home)
             {
                 base.OnBackPressed();
               
-                var intent = new Intent(this, typeof(Login));
+                intent = new Intent(this, typeof(Login));
                 StartActivity(intent);
                 LoggingClass.LogInfo("Exited from Gridview Activity",screenid);
+                ProgressIndicator.Hide();
 				return true;
             }
             return base.OnOptionsItemSelected(item);
         }
         public async override void OnBackPressed()
         {
+           
             var intent = new Intent(this, typeof(Login));
             LoggingClass.LogInfo("Clicked on options menu About", screenid);
             StartActivity(intent);

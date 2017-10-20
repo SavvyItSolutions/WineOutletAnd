@@ -77,12 +77,12 @@ namespace WineHangouts
                         MobileBarcodeScanner.Initialize(Application);
                         var scanner = new ZXing.Mobile.MobileBarcodeScanner();
                         scanner.UseCustomOverlay = false;
-                        var result =  "8902519310330";// "900497354894";//await scanner.Scan();
+                        var result = await scanner.Scan();// "8902519310330";// "900497354894";//await scanner.Scan();
                         if (result != null)
                         {
                             LoggingClass.LogInfo("User Tried to login with " + result, screenid);
-                            Preinfo(result);
-                            CurrentUser.SaveCardNumber(result);
+                            Preinfo(result.Text);
+                            CurrentUser.SaveCardNumber(result.Text);
                             txtmail.Visibility = ViewStates.Gone;
                             Txtem.Visibility = ViewStates.Gone;
                         }

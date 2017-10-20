@@ -116,7 +116,7 @@
                     android:singleLine="false"
                     android:layout_marginTop="7.0dp"
                     android:layout_marginBottom="6.0dp"
-                    android:layout_marginLeft="6.0dp" />
+                    android:layout_marginLeft="17.5dp" />
                 <EditText
                     android:id="@+id/txtmail"
                     android:singleLine="false"
@@ -133,7 +133,7 @@
                     android:layout_marginBottom="6.0dp"
                     android:background="@android:drawable/editbox_background"
                     android:layout_width="230dp"
-                    android:layout_marginRight="8.0dp" />
+                    android:layout_marginRight="18.5dp" />
             </TableRow>
         </TableLayout>
         <TableLayout
